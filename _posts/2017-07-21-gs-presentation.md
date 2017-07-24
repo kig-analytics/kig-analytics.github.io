@@ -8,7 +8,7 @@ feature-img: "img/chicago.png"
 </div> -->
 Effective site selection is a critical aspect of any developer's strategy. At KIG, we're in the process of developing a tool using city, county, and transit datasets to make the site selection process more dynamic and efficient. With this tool, a developer can parametrize by zoning, TOD areas, land square footage, and the total buildable square footage on a site.
 
-### Filtering Zoning
+### The 30,000 Foot View: Filtering Zoning
 
 The first parameter many developers encounter in terms of site selection is zoning. Often, an owner has a specific zoning class or range in mind.
 
