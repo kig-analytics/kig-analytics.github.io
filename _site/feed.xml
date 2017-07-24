@@ -5,7 +5,7 @@
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description></description>
-    <pubDate>Mon, 24 Jul 2017 08:50:40 -0500</pubDate>
+    <pubDate>Mon, 24 Jul 2017 09:51:58 -0500</pubDate>
     
       <item>
         <title>Site Discovery and Selection for Developers</title>
@@ -16,7 +16,7 @@
 &lt;/div&gt; --&gt;
 &lt;p&gt;Effective site selection is a critical aspect of any developer’s strategy. At KIG, we’re in the process of developing a tool using city, county, and transit datasets to make the site selection process more dynamic and efficient. With this tool, a developer can parametrize by zoning, TOD areas, land square footage, and the total buildable square footage on a site.&lt;/p&gt;
 
-&lt;h3 id=&quot;filtering-zoning&quot;&gt;Filtering Zoning&lt;/h3&gt;
+&lt;h3 id=&quot;the-30000-foot-view-filtering-zoning&quot;&gt;The 30,000 Foot View: Filtering Zoning&lt;/h3&gt;
 
 &lt;p&gt;The first parameter many developers encounter in terms of site selection is zoning. Often, an owner has a specific zoning class or range in mind.&lt;/p&gt;
 
@@ -26,7 +26,7 @@
 
 &lt;p&gt;As one can observe, the data is on such a scale that to use the raw data in this form would only be helpful to those already with a site in mind. We now add further lenses of analysis to pinpoint sites of greatest interest.&lt;/p&gt;
 
-&lt;h3 id=&quot;tod-areas&quot;&gt;TOD Areas&lt;/h3&gt;
+&lt;h3 id=&quot;connected-to-everywhere-tod-areas&quot;&gt;Connected to Everywhere: TOD Areas&lt;/h3&gt;
 
 &lt;p&gt;Transit-Oriented Development has been a growing priority for many developers in metropolitan areas across the nation. Our tool can filter down zoning and building information by their distance from a particular transit node. In this example we utilize the data from the CTA L line and the Metra Commuter Line stations as our transit nodes of interest.&lt;/p&gt;
 
@@ -34,7 +34,7 @@
 
 &lt;p&gt;Eventually the tool will enable selection of specific transit nodes and realtime adjustent of the desired ditance from a node.&lt;/p&gt;
 
-&lt;h3 id=&quot;existing-building-data&quot;&gt;Existing Building Data&lt;/h3&gt;
+&lt;h3 id=&quot;whats-on-the-land-existing-building-data&quot;&gt;What’s on the Land: Existing Building Data&lt;/h3&gt;
 
 &lt;p&gt;Next, we aim to understand the buildings currently located within our areas of interest. Information of interest at this stage includes footprint area, year built, number of floors, and building square footage. All of which are factors that can affect the feasability of development upon a given site.&lt;/p&gt;
 
@@ -42,7 +42,7 @@
 
 &lt;p&gt;Note: Chicago footprint data does not have accurate building square footage data for all buildings in the city - unknown square footages are replaced with a zero.&lt;/p&gt;
 
-&lt;h3 id=&quot;determine-building-potential&quot;&gt;Determine Building Potential&lt;/h3&gt;
+&lt;h3 id=&quot;how-high-can-we-build-determining-building-potential&quot;&gt;How High can we Build: Determining Building Potential&lt;/h3&gt;
 
 &lt;p&gt;Utilizing the FAR (Floor-to-Area Ratio) associated with a particular zoning class, we can calculate the maximum allowable floor area for a potential development in comparison with what is currently located at a site.&lt;/p&gt;
 
@@ -67,7 +67,7 @@
 
 &lt;p&gt;As well as using a service like OpenStreetMap to display POIs and surrounding restarauants, reatail, grocery, and convenient stores. Our goal would evenutally incorporate this as another seemless layer within a site selection tool.&lt;/p&gt;
 
-&lt;iframe width=&quot;425&quot; height=&quot;350&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; marginheight=&quot;0&quot; marginwidth=&quot;0&quot; src=&quot;http://www.openstreetmap.org/export/embed.html?bbox=-87.71724700927736%2C41.925102965895356%2C-87.69932985305788%2C41.93243842173179&amp;amp;layer=mapnik&quot; style=&quot;border: 1px solid black&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;425&quot; height=&quot;350&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; marginheight=&quot;0&quot; marginwidth=&quot;0&quot; src=&quot;https://www.openstreetmap.org/export/embed.html?bbox=-87.71724700927736%2C41.925102965895356%2C-87.69932985305788%2C41.93243842173179&amp;amp;layer=mapnik&quot; style=&quot;border: 1px solid black&quot;&gt;&lt;/iframe&gt;
 &lt;p&gt;&lt;br /&gt;&lt;small&gt;&lt;a href=&quot;https://www.openstreetmap.org/#map=17/41.92877/-87.70829&quot;&gt;View Larger Map&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;goal--scaling&quot;&gt;Goal &amp;amp; Scaling&lt;/h3&gt;
