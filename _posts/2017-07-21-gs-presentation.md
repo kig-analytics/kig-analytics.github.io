@@ -18,7 +18,7 @@ As an example, we'll be examining the Chicago market. As local governments make 
 
 As one can observe, the data is on such a scale that to use the raw data in this form would only be helpful to those already with a site in mind. We now add further lenses of analysis to pinpoint sites of greatest interest.
 
-### TOD Areas
+### Connected to Everywhere: TOD Areas
 
 Transit-Oriented Development has been a growing priority for many developers in metropolitan areas across the nation. Our tool can filter down zoning and building information by their distance from a particular transit node. In this example we utilize the data from the CTA L line and the Metra Commuter Line stations as our transit nodes of interest. 
 
@@ -26,7 +26,7 @@ Transit-Oriented Development has been a growing priority for many developers in 
 
 Eventually the tool will enable selection of specific transit nodes and realtime adjustent of the desired ditance from a node.
 
-### Existing Building Data
+### What's on the Land: Existing Building Data
 
 Next, we aim to understand the buildings currently located within our areas of interest. Information of interest at this stage includes footprint area, year built, number of floors, and building square footage. All of which are factors that can affect the feasability of development upon a given site.
 
@@ -34,7 +34,7 @@ Next, we aim to understand the buildings currently located within our areas of i
 
 Note: Chicago footprint data does not have accurate building square footage data for all buildings in the city - unknown square footages are replaced with a zero.
 
-### Determine Building Potential
+### How High can we Build: Determining Building Potential
 
 Utilizing the FAR (Floor-to-Area Ratio) associated with a particular zoning class, we can calculate the maximum allowable floor area for a potential development in comparison with what is currently located at a site. 
 
