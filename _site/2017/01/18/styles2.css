@@ -1,0 +1,52 @@
+  .map {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .layer {
+    position: absolute;
+  }
+
+  .tile {
+    position: absolute;
+    width: 256px;
+    height: 256px;
+  }
+
+  path {
+    fill: none;
+    stroke: #fff;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+  }
+
+  div.tooltip {   
+    position: absolute;           
+    text-align: center;           
+    width: 128px;                  
+    height: 24px;                 
+    padding: 2px;             
+    font: 14px sans-serif;        
+    background: white;   
+    border: 0px;                
+    pointer-events: none;         
+  }
+  /*old water: #9dd8c9
+  old park: #88D18A*/
+
+
+
+  .water-layer { fill: none; stroke: #9DD9D2; stroke-width: 1.5px; }
+  .river, .stream, .canal { fill: none; stroke: #313842; stroke-width: 1.5px; }
+  .water, .ocean { fill: #40a599; }
+  .riverbank { fill: #40a599; }
+  .water_boundary, .ocean_boundary, .riverbank_boundary { fill: none; stroke: #313842; stroke-width: 0.5px; }
+  .major_road { stroke: #fffdaa; stroke-width: 1px; opacity : 0.60;}
+  .minor_road { stroke: #fffdaa; stroke-width: 0.5px; opacity: 0.60;}
+  .highway { stroke: #ffcb49; stroke-width: 1.5px; opacity : 0.65;}
+  .buildings-layer { stroke: #fffdaa; stroke-width: 0.15px; }
+  .supermarket { fill: #fffdaa; stroke: #fffdaa; stroke-width: 2px; }
+  .airport { fill: #9e2e2e; stroke: #88D18A; stroke-width: 0.5px; }
+  .park, .nature_reserve, .wood, .protected_land { fill: #3c876d; stroke: #88D18A; stroke-width: 0.5px; }
+  .pier { fill: #fffdaa; stroke: #fff; stroke-width: 0.5px; }
+  .rail { stroke: #fffdaa; stroke-width: 0.5px; opacity : 0.75;}

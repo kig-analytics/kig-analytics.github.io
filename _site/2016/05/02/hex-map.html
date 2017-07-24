@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>D3 Transitions & Principal Component Analysis | Home</title>
+	<meta name="description" content="In this project I worked on in CS 23900 at UChicago, we take a look at how graphical transitions workwith D3.js and how to use Principle Component Analysis t...">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-Frame-Options" content="sameorigin">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="http://localhost:4000/2016/05/02/hex-map.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="Home" href="http://localhost:4000/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
+	
+
+	<!-- Google Analytics -->
+	
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-92673872-1', 'auto');
+	ga('send', 'pageview');
+	</script>
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="/img/avatar.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">Home</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/about/">
+					About
+				</a>
+			</li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled -->
+			
+
+
+<li>
+	<a href="mailto:jacobalbers@uchicago.edu" title="Email">
+		<i class="fa fa-fw fa-envelope"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/jalberz" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+<li>
+	<a href="https://www.linkedin.com/in/jlalbers" title="Follow on LinkedIn">
+		<i class="fa fa-fw fa-linkedin"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</ul>
+	</nav>
+</header>
+
+    <div class="content">
+      <article class="feature-image">
+  <header style="background-image: url('/img/unemp_samp.png')">
+    <h1 class="title">D3 Transitions & Principal Component Analysis</h1>
+    <p class="meta">
+    May 2, 2016
+    
+    </p>
+  </header>
+  <section class="post-content"><div>
+<img src="img/pca.svg" alt="Principal Component Analysis" width="1268" height="427" />
+</div>
+<p>In this project I worked on in CS 23900 at UChicago, we take a look at how graphical transitions work
+with D3.js and how to use Principle Component Analysis to determine correlation between multiple data sets.</p>
+
+<h4 id="background">Background:</h4>
+
+<p>In this demo, we use a hex map of the United States to explore some of the data on a variety of metrics: Obesity (<code class="highlighter-rouge">OB</code>), Unemployment (<code class="highlighter-rouge">UN</code>), Infant Mortality (<code class="highlighter-rouge">IM</code>), Men vs. Women household earnings (<code class="highlighter-rouge">ME/WE</code>) and the split of votes between Barack Obama and Mitt Romney in 2012 (<code class="highlighter-rouge">D,R</code>).</p>
+
+<p>Each of these displays a slightly different method of visualization. Color and lumosity are toggled to exemplify the different ways in which we signify certain colors. In some cases there are historical or cultural visualization tendencies that arise. For example blue signifying Democrat, red signifying Republican; the correlation of ‘hot’ or peak values to higher luminance and higher <code class="highlighter-rouge">r</code> values for color while ‘cold’ to lower luminance and higher ‘b’ values.</p>
+
+<p>Each of these metrics at first glance would seem entirely unrelated - but utilizing a method known as Principal Component Analysis, we can compare across multiple dimensions of data to determine whether to find states with high correlation between data sets.</p>
+
+<h4 id="demo">Demo:</h4>
+
+<p>Demo: <a href="index.html">50 State Hex Map</a></p>
+
+<h3 id="how-to-explore-the-demo">How to Explore the Demo</h3>
+
+<h4 id="1-look-through-the-standard-data-sets">1. Look through the standard data sets</h4>
+<p>Toggle through the buttons at the bottom right of the screen. The first six of these (are the visualizations of each of our datasets by themselves:</p>
+<ul>
+  <li>Obesity (OB uni)</li>
+  <li>Unemployment (UN uni)</li>
+  <li>Infant Mortality (IM uni)</li>
+  <li>D,R votes (PL uni)</li>
+  <li>D,R votes (PL,VA bi)</li>
+  <li>Men,Women Earn (ME,WE bi)
+The fluid, linearly interpolated transitions are a result of the use of <a href="https://bost.ocks.org/mike/transition/">D3.js Transitions</a></li>
+</ul>
+
+<h4 id="2-attempt-to-notice-correlations">2. Attempt to notice correlations</h4>
+<p>Merely by toggling between the initial and the subsequent buttons among these six, is it possible two notice states where you think there might be a strong correlation?</p>
+
+<h4 id="3-use-pca-to-combine-datasets">3. Use PCA to combine datasets</h4>
+<p>To discern correlations in the datasets, check off two of of the datasets in the column below ‘PCA of’ - then click on one of the following buttons in the main column:</p>
+<ul>
+  <li>PCA component 0 (uni)</li>
+  <li>PCA component 1 (uni)</li>
+  <li>PCA components 0,1 (bi)
+Were any of your hypotheses correct? Were there certain surprises?</li>
+</ul>
+
+</section>
+</article>
+
+<!-- Post navigation -->
+
+
+<!-- Disqus -->
+
+
+<!-- Muut -->
+
+    </div>
+    
+<script src="/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>

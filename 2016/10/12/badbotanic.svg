@@ -1,0 +1,6 @@
+<svg xmlns='http://www.w3.org/2000/svg'>
+  <rect x='0' y='0' width='434' height='622' fill='#83F52C'></rect>
+  <path fill='white' stroke='none' stroke-width='0' d='M 417 300 Q 267 200 217 300 M 217 300 Q 317 200 417 300'></path>
+  <path fill='white' stroke='none' stroke-width='0' d='M 17 300 Q 167 200 217 300 M 217 300 Q 117 200 17 300'></path>
+  <path fill='white' stroke='none' stroke-width='0' d='M 217 300 L 167 300 A 31 31 0 0 1 267 300 L 267 300 Z'></path>
+</svg>

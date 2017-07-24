@@ -1,0 +1,33 @@
+<svg xmlns='http://www.w3.org/2000/svg'>
+  <line BLOB='1' x1='128' y1='84' x2='55' y2='226' stroke='rgba(92, 92, 92, 1)' stroke-width='5'></line>
+  <line BLOB='2' x1='68' y1='240' x2='222' y2='238' stroke='rgba(55, 200, 188, 1)' stroke-width='5'></line>
+  <line BLOB='3' x1='145' y1='87' x2='227' y2='218' stroke='rgba(200, 55, 142, 1)' stroke-width='5'></line>
+  <line BLOB='4' x1='470' y1='91' x2='474' y2='214' stroke='rgba(55, 200, 86, 1)' stroke-width='5'></line>
+  <line BLOB='5' x1='488' y1='223' x2='622' y2='220' stroke='rgba(55, 101, 200, 1)' stroke-width='5'></line>
+  <line BLOB='6' x1='623' y1='96' x2='630' y2='211' stroke='rgba(200, 55, 190, 1)' stroke-width='5'></line>
+  <line BLOB='7' x1='487' y1='80' x2='604' y2='80' stroke='rgba(92, 92, 92, 1)' stroke-width='5'></line>
+  <line BLOB='8' x1='488' y1='93' x2='617' y2='206' stroke='rgba(55, 181, 200, 1)' stroke-width='5'></line>
+  <line BLOB='9' x1='488' y1='210' x2='609' y2='99' stroke='rgba(55, 200, 74, 1)' stroke-width='5'></line>
+  <line BLOB='10' x1='870' y1='191' x2='910' y2='82' stroke='rgba(82, 82, 82, 1)' stroke-width='5'></line>
+  <line BLOB='11' x1='918' y1='87' x2='981' y2='194' stroke='rgba(55, 159, 200, 1)' stroke-width='5'></line>
+  <line BLOB='12' x1='966' y1='187' x2='846' y2='121' stroke='rgba(36, 36, 36, 1)' stroke-width='5'></line>
+  <line BLOB='13' x1='857' y1='114' x2='987' y2='116' stroke='rgba(169, 200, 55, 1)' stroke-width='5'></line>
+  <line BLOB='14' x1='881' y1='194' x2='986' y2='127' stroke='rgba(200, 55, 113, 1)' stroke-width='5'></line>
+  <line BLOB='15' x1='852' y1='98' x2='895' y2='75' stroke='rgba(200, 55, 125, 1)' stroke-width='5'></line>
+  <line BLOB='16' x1='940' y1='69' x2='987' y2='102' stroke='rgba(200, 137, 55, 1)' stroke-width='5'></line>
+  <line BLOB='17' x1='828' y1='136' x2='859' y2='192' stroke='rgba(55, 200, 62, 1)' stroke-width='5'></line>
+  <line BLOB='18' x1='872' y1='203' x2='974' y2='205' stroke='rgba(184, 184, 184, 1)' stroke-width='5'></line>
+  <line BLOB='19' x1='995' y1='183' x2='1005' y2='135' stroke='rgba(0, 0, 0, 1)' stroke-width='5'></line>
+  <ellipse cx='127' cy='52.5' rx='15' ry='14.5' BLOB='20' fill='rgba(200, 60, 55, 1)' stroke='rgba(0, 0, 0, 1)' stroke-width='0'></ellipse>
+  <ellipse cx='43.5' cy='243.5' rx='8.5' ry='8.5' BLOB='21' fill='rgba(183, 200, 55, 1)' stroke='rgba(0, 0, 0, 1)' stroke-width='0'></ellipse>
+  <ellipse cx='246' cy='230.5' rx='10' ry='10.5' BLOB='22' fill='rgba(200, 115, 55, 1)' stroke='rgba(0, 0, 0, 1)' stroke-width='0'></ellipse>
+  <ellipse cx='459' cy='70.5' rx='8' ry='7.5' BLOB='23' fill='rgba(106, 200, 55, 1)' stroke='rgba(0, 0, 0, 1)' stroke-width='0'></ellipse>
+  <ellipse cx='632.5' cy='74.5' rx='14.5' ry='13.5' BLOB='24' fill='rgba(200, 190, 55, 1)' stroke='rgba(0, 0, 0, 1)' stroke-width='0'></ellipse>
+  <ellipse cx='459' cy='240' rx='15' ry='14' BLOB='25' fill='rgba(200, 125, 55, 1)' stroke='rgba(0, 0, 0, 1)' stroke-width='0'></ellipse>
+  <ellipse cx='641.5' cy='229.5' rx='8.5' ry='8.5' BLOB='26' fill='rgba(200, 55, 164, 1)' stroke='rgba(0, 0, 0, 1)' stroke-width='0'></ellipse>
+  <ellipse cx='811.5' cy='105.5' rx='15.5' ry='14.5' BLOB='27' fill='rgba(84, 55, 200, 1)' stroke='rgba(0, 0, 0, 1)' stroke-width='0'></ellipse>
+  <ellipse cx='918.5' cy='49.5' rx='7.5' ry='6.5' BLOB='28' fill='rgba(111, 55, 200, 1)' stroke='rgba(0, 0, 0, 1)' stroke-width='0'></ellipse>
+  <ellipse cx='1021' cy='113' rx='6' ry='6' BLOB='29' fill='rgba(55, 200, 108, 1)' stroke='rgba(0, 0, 0, 1)' stroke-width='0'></ellipse>
+  <ellipse cx='1007' cy='221.5' rx='13' ry='11.5' BLOB='30' fill='rgba(200, 55, 77, 1)' stroke='rgba(0, 0, 0, 1)' stroke-width='0'></ellipse>
+  <ellipse cx='853' cy='221' rx='8' ry='8' BLOB='31' fill='rgba(89, 89, 89, 1)' stroke='rgba(0, 0, 0, 1)' stroke-width='0'></ellipse>
+</svg>

@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>The Layers of the Urban Environment - Mapzen Vector Tiles & D3 | Home</title>
+	<meta name="description" content="How can we create lightweight digital maps that can be easily and rapidly modified to display new data? A little exploration of mine in digital map creation ...">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-Frame-Options" content="sameorigin">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="http://localhost:4000/2017/01/18/d3-map.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="Home" href="http://localhost:4000/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
+	
+
+	<!-- Google Analytics -->
+	
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-92673872-1', 'auto');
+	ga('send', 'pageview');
+	</script>
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="/img/avatar.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">Home</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/about/">
+					About
+				</a>
+			</li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled -->
+			
+
+
+<li>
+	<a href="mailto:jacobalbers@uchicago.edu" title="Email">
+		<i class="fa fa-fw fa-envelope"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/jalberz" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+<li>
+	<a href="https://www.linkedin.com/in/jlalbers" title="Follow on LinkedIn">
+		<i class="fa fa-fw fa-linkedin"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</ul>
+	</nav>
+</header>
+
+    <div class="content">
+      <article class="feature-image">
+  <header style="background-image: url('/img/chicago.png')">
+    <h1 class="title">The Layers of the Urban Environment - Mapzen Vector Tiles & D3</h1>
+    <p class="meta">
+    January 18, 2017
+    
+    </p>
+  </header>
+  <section class="post-content"><div>
+<img src="img/night.png" class="img-responsive" alt="nightlit southside" width="1268" height="327" />
+</div>
+<p>How can we create lightweight digital maps that can be easily and rapidly modified to display new data? A little exploration of mine in digital map creation through the use of <a href="https://mapzen.com/projects/vector-tiles/">Mapzen Vector Tiles</a> and <a href="www.d3js.org">D3.js</a>.</p>
+
+<h3 id="what-are-vector-tiles">What are Vector Tiles?</h3>
+
+<p>Many current day digital map technologies are often slow - sending or streaming pre-rendered data in the form of raster files to a user’s device. This can lead to inefficient loading and tedious updating of digital maps. Mapzen’s Vector Tiles avoid sending large pre-rendered graphics files by simply dividing the map (sourced from the <a href="https://www.openstreetmap.org/#map=5/51.500/-0.100">OpenStreetMap</a>) into a grid of tiles. Each tile is represented by a set of paths and features encoded in json / topojson / or similar object based on request.</p>
+
+<h3 id="getting-started">Getting Started</h3>
+
+<p>Firstly, some source files are needed for mapping with D3:</p>
+
+<ul>
+  <li>A basic D3 source from <code class="highlighter-rouge">//d3js.org/d3.v3.min.js</code>, which can be copied locally</li>
+  <li>A source file for working with d3 geo-tiles, which can be found <a href="https://github.com/d3/d3-plugins/tree/master/geo/tile">here</a></li>
+</ul>
+
+<h3 id="basic-map">Basic Map</h3>
+<p>Let’s begin with a basic map of the Chicago Area, showing only land and water</p>
+
+<div>
+<img src="img/map0.png" class="img-responsive" alt="map 0" width="960" height="500" />
+</div>
+
+<!-- <div>
+<link rel="stylesheet" href="styles0.css" />
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script src="d3.geo.tile.min.js"></script>
+<script src="map0.js"> </script>
+</div> -->
+
+<h4 id="html--js">HTML / JS</h4>
+
+<p>The source code, along with explanatory comments, can be found below</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"styles.css"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//d3js.org/d3.v3.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"d3.geo.tile.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+	<span class="c1">//project based on https://bl.ocks.org/mbostock/5616813</span>
+	<span class="c1">//Mapzen attribution: Mapzen, © OpenStreetMap contributors, Who’s On First, Natural Earth, and openstreetmapdata.com</span>
+
+	<span class="c1">//define width and height of map</span>
+	<span class="kd">var</span> <span class="nx">width</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="mi">960</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">),</span>
+    	<span class="nx">height</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">);</span>
+
+    	<span class="c1">//set up tiling based on width and height parameters</span>
+	<span class="kd">var</span> <span class="nx">tile</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">geo</span><span class="p">.</span><span class="nx">tile</span><span class="p">()</span>
+	    <span class="p">.</span><span class="nx">size</span><span class="p">([</span><span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">]);</span>
+
+	<span class="c1">//use a mercator projection to transform coordinates to spherical</span>
+	<span class="kd">var</span> <span class="nx">projection</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">geo</span><span class="p">.</span><span class="nx">mercator</span><span class="p">()</span>
+	    <span class="p">.</span><span class="nx">center</span><span class="p">([</span><span class="o">-</span><span class="mf">87.6298</span><span class="p">,</span> <span class="mf">41.8781</span><span class="p">])</span> <span class="c1">// sf : center([-122.4400, 37.7524]), chicago: center([-87.6298, 41.8781])</span>
+	    <span class="p">.</span><span class="nx">scale</span><span class="p">((</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">20</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">/</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">)</span> <span class="c1">// change scale here, 21 is about z13</span>
+	    <span class="p">.</span><span class="nx">translate</span><span class="p">([</span><span class="nx">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">]);</span>
+
+	<span class="c1">//calculation of pathing based on our projection</span>
+	<span class="kd">var</span> <span class="nx">tilePath</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">geo</span><span class="p">.</span><span class="nx">path</span><span class="p">()</span>
+	    <span class="p">.</span><span class="nx">projection</span><span class="p">(</span><span class="nx">projection</span><span class="p">);</span>
+
+	<span class="c1">//creation of svg to be populated with our map features</span>
+	<span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">"body"</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s2">"svg"</span><span class="p">)</span>
+	    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"class"</span><span class="p">,</span> <span class="s2">"map"</span><span class="p">)</span>
+	    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"width"</span><span class="p">,</span> <span class="nx">width</span><span class="p">)</span>
+	    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"height"</span><span class="p">,</span> <span class="nx">height</span><span class="p">);</span>
+	
+	<span class="c1">//setting svg background color to something other than white</span>
+	<span class="nx">map</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"rect"</span><span class="p">)</span>
+	    	<span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"width"</span><span class="p">,</span> <span class="s2">"100%"</span><span class="p">)</span>
+	    	<span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"height"</span><span class="p">,</span> <span class="s2">"100%"</span><span class="p">)</span>
+	    	<span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"fill"</span><span class="p">,</span><span class="s2">"#ffcc66"</span><span class="p">);</span>
+
+	<span class="c1">//set up layer class for styling</span>
+	<span class="kd">var</span> <span class="nx">layer</span> <span class="o">=</span> <span class="nx">map</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"svg"</span><span class="p">)</span>
+	    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"class"</span><span class="p">,</span> <span class="s2">"layer"</span><span class="p">);</span>
+
+	<span class="c1">//layers of information that we are interested in displaying</span>
+  	<span class="kd">var</span> <span class="nx">layers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'water'</span><span class="p">,</span> <span class="s1">'earth'</span><span class="p">];</span>
+
+  	<span class="c1">//gather data from mapzen and translate it to actual svg paths</span>
+	<span class="nx">map</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s2">"g"</span><span class="p">)</span>
+	    <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">tile</span>
+	      <span class="p">.</span><span class="nx">scale</span><span class="p">(</span><span class="nx">projection</span><span class="p">.</span><span class="nx">scale</span><span class="p">()</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">)</span>
+	      <span class="p">.</span><span class="nx">translate</span><span class="p">(</span><span class="nx">projection</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])))</span>
+	  <span class="p">.</span><span class="nx">enter</span><span class="p">().</span><span class="nx">append</span><span class="p">(</span><span class="s2">"g"</span><span class="p">)</span>
+	    <span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
+	      <span class="kd">var</span> <span class="nx">g</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+	      <span class="nx">d3</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="s2">"https://tile.mapzen.com/mapzen/vector/v1/all/"</span> <span class="o">+</span> <span class="nx">d</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"/"</span> <span class="o">+</span> <span class="nx">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"/"</span> <span class="o">+</span> <span class="nx">d</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">".json?api_key=mapzen-KAAL6W1"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">json</span><span class="p">)</span> <span class="p">{</span>
+	        <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">error</span><span class="p">;</span>
+
+		      <span class="c1">// build up a single concatenated array of all tile features from all tile layers</span>
+		      <span class="kd">var</span> <span class="nx">features</span> <span class="o">=</span> <span class="p">[];</span>
+		      <span class="nx">layers</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">layer</span><span class="p">){</span>
+		        <span class="k">if</span><span class="p">(</span><span class="nx">json</span><span class="p">[</span><span class="nx">layer</span><span class="p">])</span>
+		        <span class="p">{</span>	
+		            <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">json</span><span class="p">[</span><span class="nx">layer</span><span class="p">].</span><span class="nx">features</span><span class="p">)</span>
+		            <span class="p">{</span>		      
+		                <span class="nx">json</span><span class="p">[</span><span class="nx">layer</span><span class="p">].</span><span class="nx">features</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">layer_name</span> <span class="o">=</span> <span class="nx">layer</span><span class="p">;</span>
+		                <span class="nx">features</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">json</span><span class="p">[</span><span class="nx">layer</span><span class="p">].</span><span class="nx">features</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+		            <span class="p">}</span>
+		        <span class="p">}</span>
+		      <span class="p">});</span>
+
+		    <span class="c1">//appending our new paths to the svg</span>
+	        <span class="nx">g</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s2">"path"</span><span class="p">)</span>
+	          <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">features</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">a</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">sort_rank</span> <span class="p">?</span> <span class="nx">a</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">sort_rank</span> <span class="o">-</span> <span class="nx">b</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">sort_rank</span> <span class="p">:</span> <span class="mi">0</span> <span class="p">}))</span>
+	        <span class="p">.</span><span class="nx">enter</span><span class="p">().</span><span class="nx">append</span><span class="p">(</span><span class="s2">"path"</span><span class="p">)</span>
+	          <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"class"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="kd">var</span> <span class="nx">kind</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">kind</span> <span class="o">||</span> <span class="s1">''</span><span class="p">;</span> <span class="k">if</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">boundary</span><span class="p">){</span><span class="nx">kind</span> <span class="o">+=</span> <span class="s1">'_boundary'</span><span class="p">;}</span> <span class="k">return</span> <span class="nx">d</span><span class="p">.</span><span class="nx">layer_name</span> <span class="o">+</span> <span class="s1">'-layer '</span> <span class="o">+</span> <span class="nx">kind</span><span class="p">;</span> <span class="p">})</span>
+	          <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"d"</span><span class="p">,</span> <span class="nx">tilePath</span><span class="p">);</span>
+	      <span class="p">});</span>
+	    <span class="p">});</span>
+
+<span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+
+</code></pre>
+</div>
+
+<h4 id="style-sheet">Style Sheet</h4>
+
+<p>Initial styling for the basic map can be found below. Note that styling not defined for a layer will not appear in the output SVG.</p>
+
+<div class="language-css highlighter-rouge"><pre class="highlight"><code>  <span class="nc">.map</span> <span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+    <span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nc">.layer</span> <span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nc">.tile</span> <span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">256px</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">256px</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nt">path</span> <span class="p">{</span>
+    <span class="py">fill</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="py">stroke</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
+    <span class="py">stroke-linejoin</span><span class="p">:</span> <span class="n">round</span><span class="p">;</span>
+    <span class="py">stroke-linecap</span><span class="p">:</span> <span class="n">round</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nc">.earth-layer</span> <span class="p">{</span> <span class="py">fill</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span> <span class="py">stroke</span><span class="p">:</span> <span class="m">#ffcc66</span><span class="p">;</span> <span class="py">stroke-width</span><span class="p">:</span> <span class="m">1.5px</span><span class="p">;</span> <span class="p">}</span>
+  <span class="nc">.water-layer</span><span class="o">,</span> <span class="nc">.river</span><span class="o">,</span> <span class="nc">.stream</span><span class="o">,</span> <span class="nc">.canal</span> <span class="p">{</span> <span class="py">fill</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span> <span class="py">stroke</span><span class="p">:</span> <span class="m">#9DD9D2</span><span class="p">;</span> <span class="py">stroke-width</span><span class="p">:</span> <span class="m">1.5px</span><span class="p">;</span> <span class="p">}</span>
+  <span class="nc">.water</span><span class="o">,</span> <span class="nc">.ocean</span> <span class="p">{</span> <span class="py">fill</span><span class="p">:</span> <span class="m">#9DC9D8</span><span class="p">;</span> <span class="p">}</span>
+  <span class="nc">.riverbank</span> <span class="p">{</span> <span class="py">fill</span><span class="p">:</span> <span class="m">#9DD9D2</span><span class="p">;</span> <span class="p">}</span>
+  <span class="nc">.water_boundary</span><span class="o">,</span> <span class="nc">.ocean_boundary</span><span class="o">,</span> <span class="nc">.riverbank_boundary</span> <span class="p">{</span> <span class="py">fill</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span> <span class="py">stroke</span><span class="p">:</span> <span class="m">#93cbc4</span><span class="p">;</span> <span class="py">stroke-width</span><span class="p">:</span> <span class="m">0.5px</span><span class="p">;</span> <span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="adding-trainlines">Adding Trainlines</h3>
+
+<p>We would now like to know where the train lines (Metra and Amtrack) go through Chicago. Thanks to the Mapzen Tile API, we can just add 1 (ONE!) newline of CSS, and a couple changes to our Javascript to see these additions to our map.</p>
+
+<h5 id="css">css</h5>
+
+<p>Railroads are specified using a .rail tag, defined as a <em>kind</em> of the ‘roads’ layer. Each layer has a number of these kinds, which represent specific features that can have unique styling defined via css. You can check the complete <a href="https://mapzen.com/documentation/vector-tiles/layers/">documentation</a> as to the list of layers and their respective kinds.</p>
+
+<div class="language-css highlighter-rouge"><pre class="highlight"><code>  <span class="nc">.rail</span> <span class="p">{</span> <span class="py">stroke</span><span class="p">:</span> <span class="m">#503D3F</span><span class="p">;</span> <span class="py">stroke-width</span><span class="p">:</span> <span class="m">0.5px</span><span class="p">;</span> <span class="p">}</span>
+</code></pre>
+</div>
+
+<h5 id="js">js</h5>
+
+<p>Change background colors and add more layers to work</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>  	<span class="nx">map</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"rect"</span><span class="p">)</span>
+	    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"width"</span><span class="p">,</span> <span class="s2">"100%"</span><span class="p">)</span>
+	    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"height"</span><span class="p">,</span> <span class="s2">"100%"</span><span class="p">)</span>
+	    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"fill"</span><span class="p">,</span><span class="s2">"#ffcc66"</span><span class="p">);</span>
+
+
+	<span class="p">...</span>
+
+  	<span class="kd">var</span> <span class="nx">layers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'water'</span><span class="p">,</span> <span class="s1">'earth'</span><span class="p">,</span> <span class="s1">'landuse'</span><span class="p">,</span> <span class="s1">'roads'</span><span class="p">,</span> <span class="s1">'buildings'</span><span class="p">];</span>
+</code></pre>
+</div>
+
+<p>Which results in the following map, train tracks included:</p>
+
+<div>
+<img src="img/map1.png" class="img-responsive" alt="map 1" width="960" height="500" />
+</div>
+
+<p>Notice that along with the railroad tracks outlined in black, the roads and highways of Chicago have been outlined in white. This is because both roads and railroads are part of the same <code class="highlighter-rouge">roads</code> layer in Mapzen - and any feature not given a styling takes the default white (<code class="highlighter-rouge">#fff</code>) value.</p>
+
+<p>With this knowledge in hand, we can add stylings for the rest of the layers to get a map of Chicago that provides details for roads, parks, piers, universities, and more.</p>
+
+<h5 id="css-1">css</h5>
+
+<div class="language-css highlighter-rouge"><pre class="highlight"><code>  <span class="nc">.earth-layer</span> <span class="p">{</span> <span class="py">fill</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span> <span class="py">stroke</span><span class="p">:</span> <span class="m">#ffcc66</span><span class="p">;</span> <span class="py">stroke-width</span><span class="p">:</span> <span class="m">1.5px</span><span class="p">;</span> <span class="p">}</span>
+  <span class="nc">.water-layer</span><span class="o">,</span> <span class="nc">.river</span><span class="o">,</span> <span class="nc">.stream</span><span class="o">,</span> <span class="nc">.canal</span> <span class="p">{</span> <span class="py">fill</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span> <span class="py">stroke</span><span class="p">:</span> <span class="m">#9DD9D2</span><span class="p">;</span> <span class="py">stroke-width</span><span class="p">:</span> <span class="m">1.5px</span><span class="p">;</span> <span class="p">}</span>
+  <span class="nc">.water</span><span class="o">,</span> <span class="nc">.ocean</span> <span class="p">{</span> <span class="py">fill</span><span class="p">:</span> <span class="m">#9DC9D8</span><span class="p">;</span> <span class="p">}</span>
+  <span class="nc">.riverbank</span> <span class="p">{</span> <span class="py">fill</span><span class="p">:</span> <span class="m">#9DD9D2</span><span class="p">;</span> <span class="p">}</span>
+  <span class="nc">.water_boundary</span><span class="o">,</span> <span class="nc">.ocean_boundary</span><span class="o">,</span> <span class="nc">.riverbank_boundary</span> <span class="p">{</span> <span class="py">fill</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span> <span class="py">stroke</span><span class="p">:</span> <span class="m">#93cbc4</span><span class="p">;</span> <span class="py">stroke-width</span><span class="p">:</span> <span class="m">0.5px</span><span class="p">;</span> <span class="p">}</span>
+  <span class="nc">.major_road</span> <span class="p">{</span> <span class="py">stroke</span><span class="p">:</span> <span class="m">#fb7b7a</span><span class="p">;</span> <span class="py">stroke-width</span><span class="p">:</span> <span class="m">1px</span><span class="p">;</span> <span class="p">}</span>
+  <span class="nc">.minor_road</span> <span class="p">{</span> <span class="py">stroke</span><span class="p">:</span> <span class="m">#999</span><span class="p">;</span> <span class="py">stroke-width</span><span class="p">:</span> <span class="m">0.5px</span><span class="p">;</span> <span class="p">}</span>
+  <span class="nc">.highway</span> <span class="p">{</span> <span class="py">stroke</span><span class="p">:</span> <span class="m">#FA4A48</span><span class="p">;</span> <span class="py">stroke-width</span><span class="p">:</span> <span class="m">1.5px</span><span class="p">;</span> <span class="p">}</span>
+  <span class="nc">.buildings-layer</span> <span class="p">{</span> <span class="py">stroke</span><span class="p">:</span> <span class="m">#987284</span><span class="p">;</span> <span class="py">stroke-width</span><span class="p">:</span> <span class="m">0.15px</span><span class="p">;</span> <span class="p">}</span>
+  <span class="nc">.supermarket</span> <span class="p">{</span> <span class="py">fill</span><span class="p">:</span> <span class="m">#e600ac</span><span class="p">;</span> <span class="py">stroke</span><span class="p">:</span> <span class="m">#e600ac</span><span class="p">;</span> <span class="py">stroke-width</span><span class="p">:</span> <span class="m">2px</span><span class="p">;</span> <span class="p">}</span>
+  <span class="nc">.university</span><span class="o">,</span> <span class="nc">.college</span> <span class="p">{</span> <span class="py">fill</span><span class="p">:</span> <span class="m">#c63939</span><span class="p">;</span> <span class="py">stroke</span><span class="p">:</span> <span class="m">#88D18A</span><span class="p">;</span> <span class="py">stroke-width</span><span class="p">:</span> <span class="m">0.5px</span><span class="p">;</span> <span class="p">}</span>
+  <span class="nc">.airport</span> <span class="p">{</span> <span class="py">fill</span><span class="p">:</span> <span class="m">#9e2e2e</span><span class="p">;</span> <span class="py">stroke</span><span class="p">:</span> <span class="m">#88D18A</span><span class="p">;</span> <span class="py">stroke-width</span><span class="p">:</span> <span class="m">0.5px</span><span class="p">;</span> <span class="p">}</span>
+  <span class="nc">.park</span><span class="o">,</span> <span class="nc">.nature_reserve</span><span class="o">,</span> <span class="nc">.wood</span><span class="o">,</span> <span class="nc">.protected_land</span> <span class="p">{</span> <span class="py">fill</span><span class="p">:</span> <span class="m">#77b300</span><span class="p">;</span> <span class="py">stroke</span><span class="p">:</span> <span class="m">#88D18A</span><span class="p">;</span> <span class="py">stroke-width</span><span class="p">:</span> <span class="m">0.5px</span><span class="p">;</span> <span class="p">}</span>
+  <span class="nc">.pier</span> <span class="p">{</span> <span class="py">fill</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span> <span class="py">stroke</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span> <span class="py">stroke-width</span><span class="p">:</span> <span class="m">0.5px</span><span class="p">;</span> <span class="p">}</span>
+  <span class="nc">.rail</span> <span class="p">{</span> <span class="py">stroke</span><span class="p">:</span> <span class="m">#503D3F</span><span class="p">;</span> <span class="py">stroke-width</span><span class="p">:</span> <span class="m">0.5px</span><span class="p">;</span> <span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="map-of-the-loop">Map of the Loop</h3>
+
+<p>Note that the level of details displayed on the map can change depending on what scaling factor you used in your projection. The below map was taken at scale 23; it’s best to test out scaling factors on your own map to get a good sense for what level of scaling is appropriate for your project. Full code for all the maps used here can be found on my github.</p>
+
+<div>
+<img src="img/loop.png" class="img-responsive" alt="loop map" width="1107" height="1201" />
+</div>
+
+<!-- <div>
+<link rel="stylesheet" href="styles.css" />
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script src="d3.geo.tile.min.js"></script>
+<script src="map.js"> </script>
+</div>
+ -->
+<h3 id="further-additions">Further additions</h3>
+
+<ul>
+  <li>Add new layers of data, pull from more online <a href="https://mapzen.com/documentation/vector-tiles/layers/">sources</a></li>
+  <li>Pull in external data for display (elevation, census &amp; news statistics)</li>
+  <li>Walk through the math of projection</li>
+  <li>Explain how zooming works</li>
+  <li>Add zoom-and-pan capability to the map</li>
+</ul>
+
+<body>
+<link rel="stylesheet" href="styles2.css" />
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script src="d3.geo.tile.min.js"></script>
+<script src="//s3.amazonaws.com/assets-staging.mapzen.com/ui/components/bug/bug.min.js"></script>
+
+<script>
+
+	var width = Math.max(960, window.innerWidth),
+    	height = Math.max(500, window.innerHeight);
+
+	var tile = d3.geo.tile()
+	    .size([width, height]);
+
+	var projection = d3.geo.mercator()
+	    .center([-87.6298, 41.8781]) // sf : center([-122.4400, 37.7524]), chicago: center([-87.6298, 41.8781])
+	    .scale((1 << 21) / 2 / Math.PI) // change scale here, 21 is about z13
+	    .translate([width / 2, height / 2]);
+
+	var tileProjection = d3.geo.mercator(); //not sure if we need this
+
+	var tilePath = d3.geo.path()
+	    .projection(projection);
+
+	var map = d3.select("body").append("svg")
+	    .attr("class", "map")
+	    .attr("width", width)
+	    .attr("height", height);
+	
+	map.append("rect")
+	    	.attr("width", "100%")
+	    	.attr("height", "100%")
+	    	.attr("fill","#313842"); //old color #ffcc66
+
+	// Append Div for tooltip to SVG
+	var div = d3.select("body")
+			    .append("div")   
+	    		.attr("class", "tooltip")               
+	    		.style("opacity", 0);
+
+	var layer = map.append("svg")
+	    .attr("class", "layer");
+
+  	var layers = ['water', 'earth', 'landuse', 'roads', 'buildings'];
+
+	map.selectAll("g")
+	    .data(tile
+	      .scale(projection.scale() * 2 * Math.PI)
+	      .translate(projection([0, 0])))
+	  .enter().append("g")
+	    .each(function(d) {
+	      var g = d3.select(this);
+	      d3.json("https://tile.mapzen.com/mapzen/vector/v1/all/" + d[2] + "/" + d[0] + "/" + d[1] + ".json?api_key=mapzen-KAAL6W1", function(error, json) {
+	        if (error) throw error;
+
+		      // build up a single concatenated array of all tile features from all tile layers
+		      var features = [];
+		      layers.forEach(function(layer){
+		        if(json[layer])
+		        {	
+		            for(var i in json[layer].features)
+		            {
+		                // Don't include any label placement points
+		                if(json[layer].features[i].properties.label_placement) { continue }
+
+		                // Don't show large buildings at z13 or below.
+		                if(layer == 'buildings') { continue }
+
+		                // Don't show small buildings at z14 or below.
+		                if(layer == 'buildings' && json[layer].features[i].properties.area < 2000) { continue }
+		      
+		                json[layer].features[i].layer_name = layer;
+		                features.push(json[layer].features[i]);
+		            }
+		        }
+		      });
+
+	        g.selectAll("path")
+	          .data(features.sort(function(a, b) { return a.properties.sort_rank ? a.properties.sort_rank - b.properties.sort_rank : 0 }))
+	        .enter().append("path")
+	          .attr("class", function(d) { var kind = d.properties.kind || ''; if(d.properties.boundary){kind += '_boundary';} return d.layer_name + '-layer ' + kind; })
+	          .attr("d", tilePath);
+	      });
+	    });
+
+	d3.csv("nine_clusters_ill.csv", function(data) {
+
+	map.selectAll("circle")
+		.data(data)
+		.enter()
+		.append("circle")
+		.attr("cx", function(d) {
+			return projection([d.longitude, d.latitude])[0];
+		})
+		.attr("cy", function(d) {
+			return projection([d.longitude, d.latitude])[1];
+		})
+		.attr("r", function(d) {
+			return 7;
+		})
+			.style("fill", function(d) {
+				return cluster_color(d.cluster)
+			})	
+			.style("opacity", 0.75)	
+
+		// Modification of custom tooltip code provided by Malcolm Maclean, "D3 Tips and Tricks" 
+		// http://www.d3noob.org/2013/01/adding-tooltips-to-d3js-graph.html
+		.on('mouseover', function (d) {
+		    // console.log(d);
+		    // console.log(d.properties.NAME);
+		    div.transition()    
+		        .duration(400)    
+		        .style("opacity", .9);
+		    div.text("cluster: " + d.cluster + " ID: " + d.ID)
+		        .style("left", (d3.event.pageX) + "px")    
+		        .style("top", (d3.event.pageY - 28) + "px");
+		    d3.select(this)
+		        .attr("r", 14);
+		    })
+	    .on('mouseout', function (d) {
+	      d3.select(this).attr("r", 7);
+	      div.transition()        
+	           .duration(500)      
+	           .style("opacity", 0);
+	    })
+	});
+
+	function cluster_color(cluster) {
+		if (cluster == 1)
+			return "#d94545"
+		else if (cluster == 2)
+			return "#d96a45"
+		else if (cluster == 3)
+			return "#8fd945"
+		else if (cluster == 4)
+			return "#45d9d9"
+		else if (cluster == 5)
+			return "#456ad9"
+		else if (cluster == 6)
+			return "#8f45d9"
+		else if (cluster == 7)
+			return "#d945d9"
+		else if (cluster == 8)
+			return "#8fd945"
+		else (cluster == 9)
+			return "#45d98f"
+	}
+
+</script>
+</body>
+
+</section>
+</article>
+
+<!-- Post navigation -->
+
+
+<!-- Disqus -->
+
+
+<!-- Muut -->
+
+    </div>
+    
+<script src="/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<svg xmlns='http://www.w3.org/2000/svg'>
+  <line BLOB='1' x1='40' y1='342' x2='1127' y2='54' stroke='#5697ff' stroke-width='5'></line>
+  <ellipse cx='83.5' cy='262' rx='10.5' ry='51' BLOB='2' fill='rgba(55, 200, 106, 1)' stroke='rgba(0, 0, 0, 1)' stroke-width='0'></ellipse>
+  <ellipse cx='198' cy='134' rx='8' ry='44' BLOB='3' fill='rgba(55, 200, 106, 1)' stroke='rgba(0, 0, 0, 1)' stroke-width='0'></ellipse>
+  <ellipse cx='243.5' cy='256' rx='5.5' ry='27' BLOB='4' fill='rgba(199, 199, 199, 1)' stroke='rgba(0, 0, 0, 1)' stroke-width='0'></ellipse>
+  <ellipse cx='369' cy='343' rx='6' ry='39' BLOB='5' fill='rgba(55, 200, 106, 1)' stroke='rgba(0, 0, 0, 1)' stroke-width='0'></ellipse>
+  <ellipse cx='434.5' cy='153' rx='8.5' ry='60' BLOB='6' fill='rgba(199, 199, 199, 1)' stroke='rgba(0, 0, 0, 1)' stroke-width='0'></ellipse>
+  <ellipse cx='604' cy='264.5' rx='6' ry='33.5' BLOB='7' fill='rgba(199, 199, 199, 1)' stroke='rgba(0, 0, 0, 1)' stroke-width='0'></ellipse>
+  <ellipse cx='651.5' cy='136' rx='6.5' ry='29' BLOB='8' fill='rgba(55, 200, 106, 1)' stroke='rgba(0, 0, 0, 1)' stroke-width='0'></ellipse>
+  <ellipse cx='928.5' cy='206' rx='9.5' ry='52' BLOB='9' fill='rgba(199, 199, 199, 1)' stroke='rgba(0, 0, 0, 1)' stroke-width='0'></ellipse>
+  <ellipse cx='1033.5' cy='146.5' rx='8.5' ry='32.5' BLOB='10' fill='rgba(55, 200, 106, 1)' stroke='rgba(0, 0, 0, 1)' stroke-width='0'></ellipse>
+  <ellipse cx='1012.5' cy='42' rx='7.5' ry='27' BLOB='11' fill='rgba(199, 199, 199, 1)' stroke='rgba(0, 0, 0, 1)' stroke-width='0'></ellipse>
+  <ellipse cx='170' cy='371.5' rx='7' ry='37.5' BLOB='12' fill='rgba(200, 178, 55, 1)' stroke='rgba(0, 0, 0, 1)' stroke-width='0'></ellipse>
+  <ellipse cx='322' cy='176.5' rx='7' ry='30.5' BLOB='13' fill='rgba(195, 200, 55, 1)' stroke='rgba(0, 0, 0, 1)' stroke-width='0'></ellipse>
+  <ellipse cx='140.5' cy='180' rx='6.5' ry='34' BLOB='14' fill='rgba(55, 181, 200, 1)' stroke='rgba(0, 0, 0, 1)' stroke-width='0'></ellipse>
+  <ellipse cx='521' cy='315.5' rx='8' ry='37.5' BLOB='15' fill='rgba(66, 66, 66, 1)' stroke='rgba(0, 0, 0, 1)' stroke-width='0'></ellipse>
+  <ellipse cx='508.5' cy='89.5' rx='8.5' ry='35.5' BLOB='16' fill='rgba(55, 200, 120, 1)' stroke='rgba(0, 0, 0, 1)' stroke-width='0'></ellipse>
+  <ellipse cx='758.5' cy='227' rx='6.5' ry='38' BLOB='17' fill='rgba(55, 171, 200, 1)' stroke='rgba(0, 0, 0, 1)' stroke-width='0'></ellipse>
+  <ellipse cx='741' cy='78.5' rx='7' ry='31.5' BLOB='18' fill='rgba(0, 0, 0, 1)' stroke='rgba(0, 0, 0, 1)' stroke-width='0'></ellipse>
+  <ellipse cx='846.5' cy='87.5' rx='6.5' ry='32.5' BLOB='19' fill='rgba(200, 178, 55, 1)' stroke='rgba(0, 0, 0, 1)' stroke-width='0'></ellipse>
+  <ellipse cx='830' cy='196.5' rx='6' ry='33.5' BLOB='20' fill='rgba(163, 163, 163, 1)' stroke='rgba(0, 0, 0, 1)' stroke-width='0'></ellipse>
+  <ellipse cx='1090' cy='91.5' rx='3' ry='10.5' BLOB='21' fill='rgba(77, 77, 77, 1)' stroke='rgba(0, 0, 0, 1)' stroke-width='0'></ellipse>
+</svg>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>Conquering Symmetry with Prodirect Manipulation | Home</title>
+	<meta name="description" content="The world of graphical development has historically been split between two camps: most applications either use a programmatic or direct paradigm for graphica...">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-Frame-Options" content="sameorigin">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="http://localhost:4000/2016/10/12/sketch-n-sketch.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="Home" href="http://localhost:4000/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
+	
+
+	<!-- Google Analytics -->
+	
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-92673872-1', 'auto');
+	ga('send', 'pageview');
+	</script>
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="/img/avatar.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">Home</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/about/">
+					About
+				</a>
+			</li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled -->
+			
+
+
+<li>
+	<a href="mailto:jacobalbers@uchicago.edu" title="Email">
+		<i class="fa fa-fw fa-envelope"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/jalberz" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+<li>
+	<a href="https://www.linkedin.com/in/jlalbers" title="Follow on LinkedIn">
+		<i class="fa fa-fw fa-linkedin"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</ul>
+	</nav>
+</header>
+
+    <div class="content">
+      <article class="feature-image">
+  <header style="background-image: url('/img/sknsk.jpg')">
+    <h1 class="title">Conquering Symmetry with Prodirect Manipulation</h1>
+    <p class="meta">
+    October 12, 2016
+    
+    </p>
+  </header>
+  <section class="post-content"><div>
+<img src="img/opening.svg" class="img-responsive" alt="Altered Botanic Symbol" width="1268" height="357" />
+</div>
+<p>The world of graphical development has historically been split between two camps: most applications either use a programmatic or direct paradigm for graphical manipulation. Could a hybrid of these two methods result in graphical tools that can be both easier and quicker to use? Let’s explore the benefits of a ‘prodirect’ style of graphical development with the Sketch-n-Sketch tool.</p>
+
+<h2 id="why-prodirect-manipulation">Why Prodirect Manipulation?</h2>
+
+<p>What might be some of the advantages of enabling both direct and programmatic manipulation of a graphical object?</p>
+
+<h3 id="tweaking-graphical-objects-with-programmatic-manipulation-is-tedious">Tweaking graphical objects with programmatic manipulation is tedious</h3>
+
+<p>As anyone who has had the “trying to get this div / svg / other in the exact right place” problem is aware, tweaking quantitative values of a graphical object - whatever its representation - is often tedious through pure use of code. Whether you’re trying to tweak the position, size, color, or some other parameter of an object, you often have to iterate through a series of code alterations even when you may have an extremely clear idea of your intended change.</p>
+
+<h3 id="establishing-complex-relations-between-graphical-objects-is-hard-with-direct-manipulation">Establishing complex relations between graphical objects is hard with direct manipulation</h3>
+
+<p>One solution to the tweaking issues with programmatic manipulation is to do away with a coding interface entirely. Instead, many modern graphical applications enable direct manipulation of objects through the cursor. This method excels at quick, reactive changes of scalable parameters in an object. This generally leads to very quick graphical development, but what if there are parameters which have no easy way of being scaled, such as color? Or have difficulty being translated into cursor movements, such as having parameters of multiple objects relate to one another?</p>
+
+<p>For the first question, the traditional solution has been the addition of an endless stream of widgets as an intermediary to affect these parameters. A color wheel. A luminance wheel. The entire toolbox for dealing with the unique complexities of text. While many graphical artists have become accustomed to the use of these widgets, the many layers of widgets - which essentially act as levers upon the underlying code of the graphical object - often leave something more to be desired.</p>
+
+<p>The second question of relations between objects is much more difficult for cursor manipulation to address. Firstly, how do you define a relation between two graphical objects? You could say the size of two objects are related - where one object scales it’s size as the other object’s size is modified. What if you wish to relate other parameters? Or have size scale non-linearly? Without a complex and likely unintuitive set of widgets, there is no obvious way to enable this interaction using direct manipulation. To solve this problem, we need a method of defining a shared variable between multiple objects that can be toggled to the desired value. Fortunately, progammatic manipulation already solves this problem for us.</p>
+
+<blockquote>
+  <p>The combination of the direct manipulation’s tactile nature and programmatic manipulation’s mastery of higher order parameters results in a more comprehensive and rapid means of developing graphical content.</p>
+</blockquote>
+
+<h3 id="implementing-symmetry-with-sketch-n-sketch">Implementing Symmetry with Sketch-n-Sketch</h3>
+
+<p>One simple relation that can be difficult to implement and modify in a direct manipulation tool is symmetry. Using the <a href="ravichugh.github.io/sketch-n-sketch/">Sketch-n-Sketch</a> tool, we can see how helpful prodirect manipulation can be in quickly producing a graphic design that can be easily revised upon request.</p>
+
+<p>As our example, we will attempt to recreate our own SVG version of the logo of the <a href="http://www.chicagobotanic.org/">Chicago Botanic Garden</a></p>
+
+<p><img src="../12/botanic.svg" alt="Botanic Garden Symbol" width="434" height="622" /></p>
+
+<p>To follow along, I would suggest going to <a href="http://ravichugh.github.io/sketch-n-sketch/releases/v0.5.1/">this version</a> of Sketch-n-Sketch. One can either create the example from scratch to get the feel of developing with Sketch-n-Sketch or you can take a look at the existing Botanic Garden logo in the dropdown menu and play around with that example.</p>
+
+<h4 id="1-defining-a-background">1. Defining a background</h4>
+
+<p>First we would like to define the width and height of the background - for most designs this ranges in the few hundred pixels for each dimension. Remember that this background can easily be altered later either directly or via code. 
+It’s a good idea to look through the prelude for the <code class="highlighter-rouge">little</code> language, which can be found in the the dropdown menu of the Sketch-n-Sketch tool. Users of <a href="https://en.wikipedia.org/wiki/Lisp_(programming_language)"><code class="highlighter-rouge">lisp</code></a> and other <a href="https://www.haskell.org/">functional</a> <a href="http://elm-lang.org/">programming</a> languages will be fairly familiar with the basic functions, but might want to look at the SVG specific functions in the second half of the prelude.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="p">(</span><span class="k">def</span> <span class="err">[</span><span class="nf">w</span> <span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="mi">434</span><span class="err">!</span> <span class="mi">622</span><span class="p">])</span>
+</code></pre>
+</div>
+
+<p><em>Note</em>: It’s generally good practice to define the background (particularly the width and height) first when creating a new design. If you wish for certain aspects of the design to scale with the background - such as keeping a design centered - then other dimensions in the design will use these initial parameters as an input</p>
+
+<p>Next the actual background rectangle positioned at <code class="highlighter-rouge">(x,y) = (0,0)</code>, which can be done with a rect function colored a satisfying <code class="highlighter-rouge">#83F52C</code> green.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="p">(</span><span class="k">def</span> <span class="nf">background</span> <span class="p">(</span><span class="n">zones</span> <span class="s">'none'</span> <span class="p">[(</span><span class="n">rect</span> <span class="s">'#83F52C'</span> <span class="mi">0</span><span class="err">!</span> <span class="mi">0</span><span class="err">!</span> <span class="n">w</span> <span class="n">h</span><span class="p">)]))</span>
+</code></pre>
+</div>
+
+<p><em>Note</em>: Exclamation marks, <code class="highlighter-rouge">!</code>, adjacent to a constant in the <code class="highlighter-rouge">little</code> language represents a value that is frozen, or not mutable via direct manipulation.</p>
+
+<h4 id="2-drawing-the-svg">2. Drawing the SVG</h4>
+
+<p>To translate an object to an SVG representation, we use the <code class="highlighter-rouge">svg</code> function as defined in the prelude (it’s a good idea to look through the prelude, which can also be found in the the dropdown menu of the Sketch-n-Sketch tool).</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="p">(</span><span class="n">svg</span> <span class="p">(</span><span class="n">concat</span> <span class="p">[</span><span class="n">background</span><span class="p">]))</span>
+</code></pre>
+</div>
+
+<p>This should result in the following code</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="p">(</span><span class="k">def</span> <span class="err">[</span><span class="nf">w</span> <span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="mi">434</span><span class="err">!</span> <span class="mi">622</span><span class="p">])</span>
+
+<span class="p">(</span><span class="k">def</span> <span class="nf">background</span> <span class="p">(</span><span class="n">zones</span> <span class="s">'none'</span> <span class="p">[(</span><span class="n">rect</span> <span class="s">'#83F52C'</span> <span class="mi">0</span><span class="err">!</span> <span class="mi">0</span><span class="err">!</span> <span class="n">w</span> <span class="n">h</span><span class="p">)]))</span>
+
+<span class="p">(</span><span class="n">svg</span> <span class="p">(</span><span class="n">concat</span> <span class="p">[</span><span class="n">background</span><span class="p">]))</span>
+</code></pre>
+</div>
+
+<p>Selecting ‘run code’ reveals the following image.</p>
+
+<p><img src="../12/greenbox.svg" alt="Green Box" width="434" height="622" /></p>
+
+<h4 id="3-defining-a-leaf--bud-function">3. Defining a leaf &amp; bud function</h4>
+
+<p>Next we would like to draw the actual logo upon the background. We would like to define the two ‘leaves’ and the ‘bud’ of the logo.</p>
+
+<p>For the bud, we will need to use the <code class="highlighter-rouge">path</code> function in order to construct the arc that constitutes the top of the bud. The ‘path’ function in the little function is defined below:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="p">(</span><span class="k">def</span> <span class="nf">path</span> <span class="p">(</span>\<span class="p">(</span><span class="n">fill</span> <span class="n">stroke</span> <span class="n">w</span> <span class="n">d</span><span class="p">)</span>
+	<span class="p">[</span><span class="s">'path'</span>
+		<span class="p">[</span> <span class="p">[</span><span class="s">'fill'</span> <span class="n">fill</span><span class="p">]</span> <span class="p">[</span><span class="s">'stroke'</span> <span class="n">stroke</span><span class="p">]</span> <span class="p">[</span><span class="s">'stroke-width'</span> <span class="n">w</span><span class="p">]</span> <span class="p">[</span><span class="s">'d'</span> <span class="n">d</span><span class="p">]</span> <span class="p">]</span>
+		<span class="p">[]]))</span>
+</code></pre>
+</div>
+
+<p>To learn more about how paths work in SVG, please take a look at the <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths">Mozilla tutorial</a>, which provides a detailed description of the intricacies of bezier curves.</p>
+
+<p>Since we are trying to instantiate a symmetric relationship, we will use a single x-variable for each object that we will be reflected across the bisecting midline of the SVG. So let’s define a variable for this bisecting midline:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="p">(</span><span class="k">def</span> <span class="nf">midline</span> <span class="p">(</span><span class="o">/</span> <span class="n">w</span> <span class="mi">2</span><span class="err">!</span><span class="p">))</span>
+</code></pre>
+</div>
+
+<p>To define the bud, we will need to define 3 points, one for the bottom vertex (or ‘tip’), and two for the left and right ‘corners’ of the bud. Let’s define some constants to work with, namely the y coords, and a single x coord.</p>
+
+<p>Importantly, the exact numbers below are just placeholders (you can come up with your own!) - we will use direct manipulation once the design is complete, to tweak to our desired proportions.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="p">(</span><span class="k">def</span> <span class="err">[</span><span class="nf">budTipY</span> <span class="n">budCornerX</span> <span class="n">budCornerY</span><span class="p">]</span>
+     <span class="p">[</span><span class="mi">300</span>     <span class="mi">50</span>        <span class="mi">300</span>       <span class="p">])</span>
+</code></pre>
+</div>
+
+<p>Next, the ‘bud’ function:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="p">(</span><span class="k">def</span> <span class="nf">bud</span>
+  <span class="p">(</span><span class="n">let</span> <span class="p">[</span><span class="n">rx1</span> <span class="n">rx2</span><span class="p">]</span>
+       <span class="p">[(</span><span class="o">-</span> <span class="n">midline</span> <span class="n">budCornerX</span><span class="p">)</span>
+        <span class="p">(</span><span class="o">+</span> <span class="n">midline</span> <span class="n">budCornerX</span><span class="p">)]</span>
+    <span class="p">(</span><span class="n">path</span> <span class="s">'white'</span> <span class="s">'none'</span> <span class="mi">0</span>
+      <span class="p">[</span><span class="s">'M'</span> <span class="n">midline</span> <span class="n">budTipY</span>
+       <span class="s">'L'</span> <span class="n">rx1</span> <span class="n">budCornerY</span>
+       <span class="s">'A'</span> <span class="mi">31</span> <span class="mi">31</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="n">rx2</span> <span class="n">budCornerY</span>
+       <span class="s">'L'</span> <span class="n">rx2</span> <span class="n">budCornerY</span> <span class="s">'Z'</span><span class="p">])))</span>
+</code></pre>
+</div>
+
+<p><code class="highlighter-rouge">rx1</code> and <code class="highlighter-rouge">rx2</code> are merely reflected xcoord around the midpoint. Next, we use the path function to define the tip with <code class="highlighter-rouge">M</code> then the left and right corners with <code class="highlighter-rouge">L</code>. Don’t forget that the <code class="highlighter-rouge">A</code>, as it decides the curvature between the two corners! (we’ve use a default <code class="highlighter-rouge">A</code> input that creates a circular curvature)</p>
+
+<p>Now we want to proceed with a similar procedure for the left and right leaves</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="p">(</span><span class="k">def</span> <span class="err">[</span><span class="nf">x0</span>  <span class="n">y0</span>  <span class="n">xc1</span> <span class="n">yc1</span> <span class="n">x1</span>  <span class="n">y1</span>  <span class="n">xc2</span> <span class="n">yc2</span><span class="p">]</span>
+     <span class="p">[</span><span class="mi">200</span> <span class="mi">300</span> <span class="mi">50</span>  <span class="mi">200</span> <span class="mi">0</span>   <span class="mi">300</span> <span class="mi">100</span>  <span class="mi">200</span><span class="p">])</span>
+
+<span class="p">(</span><span class="k">def</span> <span class="nf">leaf</span> <span class="p">(</span>\<span class="n">polarity</span>
+  <span class="p">(</span><span class="n">let</span> <span class="p">[</span><span class="n">mx0</span> <span class="n">mxc1</span> <span class="n">mx1</span> <span class="n">mxc2</span><span class="p">]</span>
+       <span class="p">[(</span><span class="o">+</span> <span class="n">midline</span> <span class="p">(</span><span class="o">*</span> <span class="n">polarity</span> <span class="n">x0</span><span class="p">))</span>
+        <span class="p">(</span><span class="o">+</span> <span class="n">midline</span> <span class="p">(</span><span class="o">*</span> <span class="n">polarity</span> <span class="n">xc1</span><span class="p">))</span>
+        <span class="p">(</span><span class="o">+</span> <span class="n">midline</span> <span class="p">(</span><span class="o">*</span> <span class="n">polarity</span> <span class="n">x1</span><span class="p">))</span>
+        <span class="p">(</span><span class="o">+</span> <span class="n">midline</span> <span class="p">(</span><span class="o">*</span> <span class="n">polarity</span> <span class="n">xc2</span><span class="p">))]</span>
+    <span class="p">(</span><span class="n">path</span> <span class="s">'white'</span> <span class="s">'none'</span> <span class="mi">0</span>
+      <span class="p">[</span><span class="s">'M'</span> <span class="n">mx0</span> <span class="n">y0</span>
+       <span class="s">'Q'</span> <span class="n">mxc1</span> <span class="n">yc1</span> <span class="n">mx1</span> <span class="n">y1</span>
+       <span class="s">'M'</span> <span class="n">mx1</span> <span class="n">y1</span>
+       <span class="s">'Q'</span> <span class="n">mxc2</span> <span class="n">yc2</span> <span class="n">mx0</span> <span class="n">y0</span><span class="p">]))))</span>
+</code></pre>
+</div>
+
+<p>Once again, the initial coordinate variables can be educated guesses - there’s no need to worry about accuracy at this stage of development. The <code class="highlighter-rouge">polarity</code> argument determines whether the leaf is left (<code class="highlighter-rouge">-1</code>) or right (<code class="highlighter-rouge">1</code>). For the path in this case, the <code class="highlighter-rouge">M</code> represent the end points of a leaf, while the <code class="highlighter-rouge">Q</code> is a control point that determines the curvature of the path.</p>
+
+<h4 id="4-adjusting-constants-using-direct-manipulation">4. Adjusting constants using direct manipulation</h4>
+
+<p>Now we need to add these new objects to our <code class="highlighter-rouge">svg</code> object, as follows:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>(svg (concat [background [(leaf 1!) (leaf -1!) bud]]))
+</code></pre>
+</div>
+
+<p>With our initial, dummy variables the design looks as follows:</p>
+
+<p><img src="../12/badbotanic.svg" alt="Bad Botanic" width="434" height="622" /></p>
+
+<p>Hmmm… not quite right. Now we can use direct manipulation to adjust to make it look like our intended design. Cursor over the SVG to reveal the control points for the paths.</p>
+
+<p><img src="../12/botanic_zones.png" alt="zones" /></p>
+
+<p>The entirety of the logo’s code is below:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="p">;</span> <span class="n">Logo</span><span class="p">:</span> <span class="n">Chicago</span> <span class="n">Botanic</span> <span class="n">Garden</span>
+
+<span class="p">;</span> <span class="n">Click</span> <span class="s">'[Zones]'</span> <span class="n">to</span> <span class="n">see</span> <span class="n">the</span> <span class="n">control</span> <span class="n">points</span> <span class="k">for</span>
+<span class="p">;</span> <span class="n">the</span> <span class="n">various</span> <span class="n">Bezier</span> <span class="n">curves</span><span class="o">.</span>
+
+<span class="p">(</span><span class="k">def</span> <span class="err">[</span><span class="nf">w</span> <span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="mi">791</span> <span class="mi">908</span><span class="p">])</span>
+<span class="p">(</span><span class="k">def</span> <span class="nf">midline</span> <span class="p">(</span><span class="o">/</span> <span class="n">w</span> <span class="mi">2</span><span class="err">!</span><span class="p">))</span>
+
+<span class="p">(</span><span class="k">def</span> <span class="err">[</span><span class="nf">x0</span>  <span class="n">y0</span>  <span class="n">xc1</span> <span class="n">yc1</span> <span class="n">x1</span>  <span class="n">y1</span>  <span class="n">xc2</span> <span class="n">yc2</span><span class="p">]</span>
+     <span class="p">[</span><span class="mi">325</span> <span class="mi">362</span> <span class="mi">59</span>  <span class="mi">222</span> <span class="mi">2</span>   <span class="mi">702</span> <span class="mi">27</span>  <span class="mi">190</span><span class="p">])</span>
+
+<span class="p">(</span><span class="k">def</span> <span class="nf">leaf</span> <span class="p">(</span>\<span class="n">polarity</span>
+  <span class="p">(</span><span class="n">let</span> <span class="p">[</span><span class="n">mx0</span> <span class="n">mxc1</span> <span class="n">mx1</span> <span class="n">mxc2</span><span class="p">]</span>
+       <span class="p">[(</span><span class="o">+</span> <span class="n">midline</span> <span class="p">(</span><span class="o">*</span> <span class="n">polarity</span> <span class="n">x0</span><span class="p">))</span>
+        <span class="p">(</span><span class="o">+</span> <span class="n">midline</span> <span class="p">(</span><span class="o">*</span> <span class="n">polarity</span> <span class="n">xc1</span><span class="p">))</span>
+        <span class="p">(</span><span class="o">+</span> <span class="n">midline</span> <span class="p">(</span><span class="o">*</span> <span class="n">polarity</span> <span class="n">x1</span><span class="p">))</span>
+        <span class="p">(</span><span class="o">+</span> <span class="n">midline</span> <span class="p">(</span><span class="o">*</span> <span class="n">polarity</span> <span class="n">xc2</span><span class="p">))]</span>
+    <span class="p">(</span><span class="n">path</span> <span class="s">'white'</span> <span class="s">'none'</span> <span class="mi">0</span>
+      <span class="p">[</span><span class="s">'M'</span> <span class="n">mx0</span> <span class="n">y0</span>
+       <span class="s">'Q'</span> <span class="n">mxc1</span> <span class="n">yc1</span> <span class="n">mx1</span> <span class="n">y1</span>
+       <span class="s">'M'</span> <span class="n">mx1</span> <span class="n">y1</span>
+       <span class="s">'Q'</span> <span class="n">mxc2</span> <span class="n">yc2</span> <span class="n">mx0</span> <span class="n">y0</span><span class="p">]))))</span>
+
+<span class="p">(</span><span class="k">def</span> <span class="err">[</span><span class="nf">budTipY</span> <span class="n">budCornerX</span> <span class="n">budCornerY</span><span class="p">]</span>
+     <span class="p">[</span><span class="mi">579</span>     <span class="mi">64</span>         <span class="mi">351</span>       <span class="p">])</span>
+
+<span class="p">(</span><span class="k">def</span> <span class="nf">bud</span>
+  <span class="p">(</span><span class="n">let</span> <span class="p">[</span><span class="n">rx1</span> <span class="n">rx2</span><span class="p">]</span>
+       <span class="p">[(</span><span class="o">-</span> <span class="n">midline</span> <span class="n">budCornerX</span><span class="p">)</span>
+        <span class="p">(</span><span class="o">+</span> <span class="n">midline</span> <span class="n">budCornerX</span><span class="p">)]</span>
+    <span class="p">(</span><span class="n">path</span> <span class="s">'white'</span> <span class="s">'none'</span> <span class="mi">0</span>
+      <span class="p">[</span><span class="s">'M'</span> <span class="n">midline</span> <span class="n">budTipY</span>
+       <span class="s">'L'</span> <span class="n">rx1</span> <span class="n">budCornerY</span>
+       <span class="s">'A'</span> <span class="mi">31</span> <span class="mi">31</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="n">rx2</span> <span class="n">budCornerY</span>
+       <span class="s">'L'</span> <span class="n">rx2</span> <span class="n">budCornerY</span> <span class="s">'Z'</span><span class="p">])))</span>
+
+<span class="p">(</span><span class="k">def</span> <span class="nf">background</span> <span class="p">(</span><span class="n">zones</span> <span class="s">'none'</span> <span class="p">[(</span><span class="n">rect</span> <span class="s">'#83F52C'</span> <span class="mi">0</span><span class="err">!</span> <span class="mi">0</span><span class="err">!</span> <span class="n">w</span> <span class="n">h</span><span class="p">)]))</span>
+
+<span class="p">(</span><span class="n">svg</span> <span class="p">(</span><span class="n">concat</span> <span class="p">[</span><span class="n">background</span> <span class="p">[(</span><span class="n">leaf</span> <span class="mi">1</span><span class="err">!</span><span class="p">)</span> <span class="p">(</span><span class="n">leaf</span> <span class="o">-</span><span class="mi">1</span><span class="err">!</span><span class="p">)</span> <span class="n">bud</span><span class="p">]]))</span></code></pre></figure>
+
+<h3 id="thanks">Thanks</h3>
+<p>I would like to thank Professor Ravi Chugh for the chance to work under him as a research assistant and TA for 2015 - 2016. Working under Prof. Chugh, I helped in the development of the Sketch-n-Sketch tool and created a number of the original examples.</p>
+
+<p>Below you can find the abstract for the 2015 PLDI paper:</p>
+
+<blockquote>
+  <p>We present the Sketch-n-Sketch editor for Scalable Vector Graphics (SVG) that integrates programmatic and direct manipulation, two modes of interaction with complementary strengths. In Sketch-n-Sketch, the user writes a program to generate an output SVG canvas. Then the user may directly manipulate the canvas while the system infers real-time updates to the program in order to match the changes to the output. To achieve this, we propose (i) a technique called trace-based program synthesis that takes program execution history into account in order to constrain the search space and (ii) heuristics for dealing with ambiguities. Based on our experience writing more than 40 examples and from the results of a study with 25 participants, we conclude that Sketch-n-Sketch provides a novel and effective workflow between the boundaries of existing programmatic and direct manipulation systems.</p>
+</blockquote>
+
+<ul>
+  <li>To learn more about prodirect manipulation visit the <a href="http://ravichugh.github.io/sketch-n-sketch/">project site</a>.</li>
+  <li>To test out the latest version of the tool itself, check out the <a href="http://ravichugh.github.io/sketch-n-sketch/releases/v0.5.1/">demo</a></li>
+  <li>To read the PLDI paper, <a href="https://arxiv.org/abs/1507.02988">here</a> is where it lives on arxiv</li>
+</ul>
+</section>
+</article>
+
+<!-- Post navigation -->
+
+
+<!-- Disqus -->
+
+
+<!-- Muut -->
+
+    </div>
+    
+<script src="/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>
