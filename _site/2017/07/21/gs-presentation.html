@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>Site Discovery and Selection for Developers | Home</title>
+	<meta name="description" content="Effective site selection is a critical aspect of any developer’s strategy. At KIG, we’re in the process of developing a tool using city, county, and transit ...">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-Frame-Options" content="sameorigin">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="http://localhost:4000/2017/07/21/gs-presentation.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="Home" href="http://localhost:4000/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
+	
+
+	<!-- Google Analytics -->
+	
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-92673872-1', 'auto');
+	ga('send', 'pageview');
+	</script>
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="/img/avatar.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">Home</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/about/">
+					About
+				</a>
+			</li>
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled -->
+			
+
+
+<li>
+	<a href="mailto:jacobalbers@uchicago.edu" title="Email">
+		<i class="fa fa-fw fa-envelope"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/jalberz" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+<li>
+	<a href="https://www.linkedin.com/in/jlalbers" title="Follow on LinkedIn">
+		<i class="fa fa-fw fa-linkedin"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</ul>
+	</nav>
+</header>
+
+    <div class="content">
+      <article class="feature-image">
+  <header style="background-image: url('/img/chicago.png')">
+    <h1 class="title">Site Discovery and Selection for Developers</h1>
+    <p class="meta">
+    July 21, 2017
+    
+    </p>
+  </header>
+  <section class="post-content"><!-- <div>
+<img src="img/night.png" class="img-responsive" alt="nightlit southside" width = "1268" height = "327"/>
+</div> -->
+<p>Effective site selection is a critical aspect of any developer’s strategy. At KIG, we’re in the process of developing a tool using city, county, and transit datasets to make the site selection process more dynamic and efficient. With this tool, a developer can parametrize by zoning, TOD areas, land square footage, and the total buildable square footage on a site.</p>
+
+<h3 id="filtering-zoning">Filtering Zoning</h3>
+
+<p>The first parameter many developers encounter in terms of site selection is zoning. Often, an owner has a specific zoning class or range in mind.</p>
+
+<p>As an example, we’ll be examining the Chicago market. As local governments make their data public and more accessible, we can incorporate them into interactive maps that reveal the zoning layout of a city:</p>
+
+<iframe width="100%" height="520" frameborder="0" src="https://mrutzen1.carto.com/builder/10e23253-de3f-44f5-869c-fee3849a4196/embed" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" oallowfullscreen="" msallowfullscreen=""></iframe>
+
+<p>As one can observe, the data is on such a scale that to use the raw data in this form would only be helpful to those already with a site in mind. We now add further lenses of analysis to pinpoint sites of greatest interest.</p>
+
+<h3 id="tod-areas">TOD Areas</h3>
+
+<p>Transit-Oriented Development has been a growing priority for many developers in metropolitan areas across the nation. Our tool can filter down zoning and building information by their distance from a particular transit node. In this example we utilize the data from the CTA L line and the Metra Commuter Line stations as our transit nodes of interest.</p>
+
+<iframe width="100%" height="520" frameborder="0" src="https://mrutzen1.carto.com/builder/c2b4ff3f-e382-4190-b46a-ac82770a7e1a/embed" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" oallowfullscreen="" msallowfullscreen=""></iframe>
+
+<p>Eventually the tool will enable selection of specific transit nodes and realtime adjustent of the desired ditance from a node.</p>
+
+<h3 id="existing-building-data">Existing Building Data</h3>
+
+<p>Next, we aim to understand the buildings currently located within our areas of interest. Information of interest at this stage includes footprint area, year built, number of floors, and building square footage. All of which are factors that can affect the feasability of development upon a given site.</p>
+
+<iframe width="100%" height="520" frameborder="0" src="https://mrutzen1.carto.com/builder/2a080009-2d24-4f94-877b-6c2b12cf4e87/embed" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" oallowfullscreen="" msallowfullscreen=""></iframe>
+
+<p>Note: Chicago footprint data does not have accurate building square footage data for all buildings in the city - unknown square footages are replaced with a zero.</p>
+
+<h3 id="determine-building-potential">Determine Building Potential</h3>
+
+<p>Utilizing the FAR (Floor-to-Area Ratio) associated with a particular zoning class, we can calculate the maximum allowable floor area for a potential development in comparison with what is currently located at a site.</p>
+
+<p>For this analysis we focus upon one particular TOD area within the Chicago market: Logan Square. As a neighborhood that has seen a significant increase in income and education attainment levels over the past decade, it has been a hotbed of development. However, the majority of new developments in the area have occured in other TOD areas within the neihgborhood. Could there still be more buildable square footage around the Logan Square L train station?</p>
+
+<iframe src="https://player.vimeo.com/video/224944824" width="640" height="360" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+<p><a href="https://vimeo.com/224944824">Logan Square Land Analysis</a> from <a href="https://vimeo.com/kiganalytics">KIG Analytics</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+<p>A 2D and static version of the information above:</p>
+
+<iframe width="100%" height="520" frameborder="0" src="https://mrutzen1.carto.com/builder/fc724878-6527-11e7-bf22-0e8c56e2ffdb/embed" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" oallowfullscreen="" msallowfullscreen=""></iframe>
+
+<p>In the future, we aim to build in other ordinaces and bonuses that city’s tend to award for affordable housing, sustainable development, or other practices.</p>
+
+<h3 id="data-diligence-and-owner-identification">Data Diligence and Owner Identification</h3>
+
+<p>With our work with the Chicago datasets, we have found that updates often occur only on an annual or bi-annual basis. The resulting erosion of accuracy requires diligence with more up-to-date sources on the current use and ownership of a given site.</p>
+
+<p>For verifying ownership, we can also add an additional layer for parcel mapping, able to reveal associated ownership information from local assessor and recorder offices.</p>
+
+<iframe width="100%" height="520" frameborder="0" src="https://mrutzen1.carto.com/builder/1ebd54f5-8efc-412d-b025-6f670404414a/embed" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" oallowfullscreen="" msallowfullscreen=""></iframe>
+
+<p>As well as using a service like OpenStreetMap to display POIs and surrounding restarauants, reatail, grocery, and convenient stores. Our goal would evenutally incorporate this as another seemless layer within a site selection tool.</p>
+
+<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=-87.71724700927736%2C41.925102965895356%2C-87.69932985305788%2C41.93243842173179&amp;layer=mapnik" style="border: 1px solid black"></iframe>
+<p><br /><small><a href="https://www.openstreetmap.org/#map=17/41.92877/-87.70829">View Larger Map</a></small></p>
+
+<h3 id="goal--scaling">Goal &amp; Scaling</h3>
+
+<p>A singular experience of being able to add or remove any parameter layers of interest- including zoning, TOD areas (including specific locations, adjustable radii), current building footprints, buildable square footage, and ownership data.</p>
+
+<p>Once complete, this tool could be scaled to other metropolitan areas within the United States. The primary requirement would be complete and up-to-date open datatsets from city and county governments. The datasets needed would include citywide zoning and building footprint GIS data, as well as countywide parcel GIS data. A zoning key used to understand the allowable FAR associated with each zoning class would also be useful.</p>
+
+<!-- ### Method
+
+Data on  -->
+</section>
+</article>
+
+<!-- Post navigation -->
+
+
+<!-- Disqus -->
+
+
+<!-- Muut -->
+
+    </div>
+    
+<script src="/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>
