@@ -5,7 +5,7 @@
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description></description>
-    <pubDate>Tue, 25 Jul 2017 10:54:47 -0500</pubDate>
+    <pubDate>Tue, 25 Jul 2017 17:38:08 -0500</pubDate>
     
       <item>
         <title>Site Discovery and Selection for Developers</title>
@@ -23,7 +23,7 @@
 
 &lt;p&gt;The overall process that this tool will use can be broken down as follows:&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;Filter a metropoliton area by zoning classes of interest&lt;/li&gt;
+  &lt;li&gt;Filter a metropolitan area by zoning classes of interest&lt;/li&gt;
   &lt;li&gt;Filter those areas by TOD&lt;/li&gt;
   &lt;li&gt;Determine if current buildings are fully utilizing the FAR of an ar area of interest&lt;/li&gt;
   &lt;li&gt;Verify ownership and current use details&lt;/li&gt;
@@ -31,25 +31,27 @@
 
 &lt;h3 id=&quot;the-30000-foot-view-filtering-zoning&quot;&gt;The 30,000 Foot View: Filtering Zoning&lt;/h3&gt;
 
-&lt;p&gt;The first parameter many developers encounter in terms of site selection is zoning. Often, an these has a specific zoning class or classes in mind for their development.&lt;/p&gt;
+&lt;p&gt;The first parameter many developers encounter in the site selection process is zoning. Often, an these has a specific zoning class or classes in mind for their development.&lt;/p&gt;
 
-&lt;p&gt;As an example, we’ll be examining the Chicago market. As local governments make their data public and more accessible, we can incorporate them into interactive maps that reveal the zoning layout of a city:&lt;/p&gt;
+&lt;p&gt;As an example, we’ll be examining the Chicago market. As local governments make their data more accessible, we can incorporate them into interactive maps that reveal the zoning layout of a city:&lt;/p&gt;
 
 &lt;iframe width=&quot;100%&quot; height=&quot;520&quot; frameborder=&quot;0&quot; src=&quot;https://mrutzen1.carto.com/builder/10e23253-de3f-44f5-869c-fee3849a4196/embed&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; oallowfullscreen=&quot;&quot; msallowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
-&lt;p&gt;As one can observe, the data is on such a scale that to use the raw data in this form would only be helpful to those already with a site in mind. We now add further lenses of analysis to pinpoint sites of greatest interest.&lt;/p&gt;
+&lt;p&gt;As one can observe, the data is on such a scale that it would only be helpful to those already with a site in mind. To select a site without prior knowledge, particularly if a developer is less familiar with a given area, We now add further lenses of analysis to pinpoint sites of greatest interest.&lt;/p&gt;
 
 &lt;h3 id=&quot;connected-to-everywhere-tod-areas&quot;&gt;Connected to Everywhere: TOD Areas&lt;/h3&gt;
 
-&lt;p&gt;Transit-Oriented Development has been a growing priority for many developers in metropolitan areas across the nation. Our tool can filter down zoning and building information by their distance from a particular transit node. In this example we utilize the data from the CTA L line and the Metra Commuter Line stations as our transit nodes of interest.&lt;/p&gt;
+&lt;p&gt;Transit-Oriented Development (TOD) has been a growing priority for many developers in metropolitan areas across the nation. We can filter down zoning and building information by their distance from a particular transit node. In this example we utilize the station data from the CTA ‘L’ System and the Metra Commuter Line as our transit nodes of interest.&lt;/p&gt;
 
-&lt;iframe width=&quot;100%&quot; height=&quot;520&quot; frameborder=&quot;0&quot; src=&quot;https://mrutzen1.carto.com/builder/c2b4ff3f-e382-4190-b46a-ac82770a7e1a/embed&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; oallowfullscreen=&quot;&quot; msallowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;100%&quot; height=&quot;820&quot; frameborder=&quot;0&quot; src=&quot;https://mrutzen1.carto.com/builder/c2b4ff3f-e382-4190-b46a-ac82770a7e1a/embed&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; oallowfullscreen=&quot;&quot; msallowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
-&lt;p&gt;Eventually the tool will enable selection of specific transit nodes and realtime adjustent of the desired ditance from a node.&lt;/p&gt;
+&lt;p&gt;Eventually our tool will enable selection of specific transit nodes and real-time adjustment of the desired distance from a node.&lt;/p&gt;
+
+&lt;p&gt;At this stage, let us focus upon one particular TOD area within the Chicago market: Logan Square. As a neighborhood that has seen a significant increase in income and education attainment levels over the past decade, it has been a hotbed of development. However, the majority of new developments in the area have occurred in other TOD areas within the neighborhood. Could there still be more buildable square footage around the Logan Square L train station?&lt;/p&gt;
 
 &lt;h3 id=&quot;whats-on-the-land-existing-building-data&quot;&gt;What’s on the Land: Existing Building Data&lt;/h3&gt;
 
-&lt;p&gt;Next, we aim to understand the buildings currently located within our areas of interest. Information of interest at this stage includes footprint area, year built, number of floors, and building square footage. All of which are factors that can affect the feasability of development upon a given site.&lt;/p&gt;
+&lt;p&gt;Next, we aim to understand the buildings currently located within our areas of interest. Information of interest at this stage includes footprint area, year built, number of floors, and building square footage. All of which are factors that can affect the feasibility of development upon a given site.&lt;/p&gt;
 
 &lt;iframe width=&quot;100%&quot; height=&quot;520&quot; frameborder=&quot;0&quot; src=&quot;https://mrutzen1.carto.com/builder/2a080009-2d24-4f94-877b-6c2b12cf4e87/embed&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; oallowfullscreen=&quot;&quot; msallowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
@@ -59,8 +61,6 @@
 
 &lt;p&gt;Utilizing the FAR (Floor-to-Area Ratio) associated with a particular zoning class, we can calculate the maximum allowable floor area for a potential development in comparison with what is currently located at a site.&lt;/p&gt;
 
-&lt;p&gt;For this analysis we focus upon one particular TOD area within the Chicago market: Logan Square. As a neighborhood that has seen a significant increase in income and education attainment levels over the past decade, it has been a hotbed of development. However, the majority of new developments in the area have occured in other TOD areas within the neihgborhood. Could there still be more buildable square footage around the Logan Square L train station?&lt;/p&gt;
-
 &lt;iframe src=&quot;https://player.vimeo.com/video/224944824&quot; width=&quot;100%&quot; height=&quot;520&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 &lt;p&gt;&lt;a href=&quot;https://vimeo.com/224944824&quot;&gt;Logan Square Land Analysis&lt;/a&gt; from &lt;a href=&quot;https://vimeo.com/kiganalytics&quot;&gt;KIG Analytics&lt;/a&gt; on &lt;a href=&quot;https://vimeo.com&quot;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
 
@@ -68,26 +68,26 @@
 
 &lt;iframe width=&quot;100%&quot; height=&quot;520&quot; frameborder=&quot;0&quot; src=&quot;https://mrutzen1.carto.com/builder/fc724878-6527-11e7-bf22-0e8c56e2ffdb/embed&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; oallowfullscreen=&quot;&quot; msallowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
-&lt;p&gt;In the future, we aim to build in other ordinaces and bonuses that city’s tend to award for affordable housing, sustainable development, or other practices.&lt;/p&gt;
+&lt;p&gt;In the future, we aim to build in other ordinances and bonuses that city’s tend to award for affordable housing, sustainable development, or other practices.&lt;/p&gt;
 
 &lt;h3 id=&quot;data-diligence-and-owner-identification&quot;&gt;Data Diligence and Owner Identification&lt;/h3&gt;
 
-&lt;p&gt;With our work with the Chicago datasets, we have found that updates often occur only on an annual or bi-annual basis. The resulting erosion of accuracy requires diligence with more up-to-date sources on the current use and ownership of a given site.&lt;/p&gt;
+&lt;p&gt;While working with the Chicago datasets, we have found that updates often occur only on an annual or bi-annual basis. The resulting erosion of accuracy requires diligence with more up-to-date sources on the current use and ownership of a given site.&lt;/p&gt;
 
 &lt;p&gt;For verifying ownership, we can also add an additional layer for parcel mapping, able to reveal associated ownership information from local assessor and recorder offices.&lt;/p&gt;
 
 &lt;iframe width=&quot;100%&quot; height=&quot;520&quot; frameborder=&quot;0&quot; src=&quot;https://mrutzen1.carto.com/builder/1ebd54f5-8efc-412d-b025-6f670404414a/embed&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; oallowfullscreen=&quot;&quot; msallowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
-&lt;p&gt;As well as using a service like OpenStreetMap to display POIs and surrounding restarauants, reatail, grocery, and convenient stores. Our goal would evenutally incorporate this as another seemless layer within a site selection tool.&lt;/p&gt;
+&lt;p&gt;As well as using a service like OpenStreetMap to display POIs and surrounding restaurants, retail, grocery, and convenient stores. Our goal would eventually incorporate this as another seamless layer within a site selection tool.&lt;/p&gt;
 
 &lt;iframe width=&quot;100%&quot; height=&quot;520&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; marginheight=&quot;0&quot; marginwidth=&quot;0&quot; src=&quot;https://www.openstreetmap.org/export/embed.html?bbox=-87.71724700927736%2C41.925102965895356%2C-87.69932985305788%2C41.93243842173179&amp;amp;layer=mapnik&quot; style=&quot;border: 1px solid black&quot;&gt;&lt;/iframe&gt;
 &lt;p&gt;&lt;br /&gt;&lt;small&gt;&lt;a href=&quot;https://www.openstreetmap.org/#map=17/41.92877/-87.70829&quot;&gt;View Larger Map&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;goal--scaling&quot;&gt;Goal &amp;amp; Scaling&lt;/h3&gt;
 
-&lt;p&gt;A singular experience of being able to add or remove any parameter layers of interest- including zoning, TOD areas (including specific locations, adjustable radii), current building footprints, buildable square footage, and ownership data.&lt;/p&gt;
+&lt;p&gt;We aim to build a singular experience for developers to add or remove any parameter layers of interest - including zoning, TOD areas (including specific locations, adjustable radii), current building footprints, buildable square footage, and ownership data.&lt;/p&gt;
 
-&lt;p&gt;Once complete, this tool could be scaled to other metropolitan areas within the United States. The primary requirement would be complete and up-to-date open datatsets from city and county governments. The datasets needed would include citywide zoning and building footprint GIS data, as well as countywide parcel GIS data. A zoning key used to understand the allowable FAR associated with each zoning class would also be useful.&lt;/p&gt;
+&lt;p&gt;Once complete, this tool could be scaled to other metropolitan areas within the United States. The primary requirement would be complete and up-to-date open datasets from city and county governments. The datasets needed would include citywide zoning and building footprint GIS data, as well as countywide parcel GIS data. A zoning key used to understand the allowable FAR associated with each zoning class would also be useful.&lt;/p&gt;
 
 &lt;!-- ### Method
 
