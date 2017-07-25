@@ -5,7 +5,7 @@
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description></description>
-    <pubDate>Mon, 24 Jul 2017 09:51:58 -0500</pubDate>
+    <pubDate>Tue, 25 Jul 2017 10:54:47 -0500</pubDate>
     
       <item>
         <title>Site Discovery and Selection for Developers</title>
@@ -14,11 +14,24 @@
         <description>&lt;!-- &lt;div&gt;
 &lt;img src=&quot;img/night.png&quot; class=&quot;img-responsive&quot; alt=&quot;nightlit southside&quot; width = &quot;1268&quot; height = &quot;327&quot;/&gt;
 &lt;/div&gt; --&gt;
-&lt;p&gt;Effective site selection is a critical aspect of any developer’s strategy. At KIG, we’re in the process of developing a tool using city, county, and transit datasets to make the site selection process more dynamic and efficient. With this tool, a developer can parametrize by zoning, TOD areas, land square footage, and the total buildable square footage on a site.&lt;/p&gt;
+
+&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
+
+&lt;p&gt;Effective site selection is a critical aspect of any developer’s strategy. At KIG, we’re developing a tool using city, county, and transit datasets to make the site selection process both easier and more comprehensive. With this tool in hand, a developer can parametrize by zoning, TOD areas, land square footage, and the total buildable square footage on a site - all without having to leave their desk.&lt;/p&gt;
+
+&lt;p&gt;Utilizing the increasing number of datasets available from local governments,&lt;/p&gt;
+
+&lt;p&gt;The overall process that this tool will use can be broken down as follows:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Filter a metropoliton area by zoning classes of interest&lt;/li&gt;
+  &lt;li&gt;Filter those areas by TOD&lt;/li&gt;
+  &lt;li&gt;Determine if current buildings are fully utilizing the FAR of an ar area of interest&lt;/li&gt;
+  &lt;li&gt;Verify ownership and current use details&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h3 id=&quot;the-30000-foot-view-filtering-zoning&quot;&gt;The 30,000 Foot View: Filtering Zoning&lt;/h3&gt;
 
-&lt;p&gt;The first parameter many developers encounter in terms of site selection is zoning. Often, an owner has a specific zoning class or range in mind.&lt;/p&gt;
+&lt;p&gt;The first parameter many developers encounter in terms of site selection is zoning. Often, an these has a specific zoning class or classes in mind for their development.&lt;/p&gt;
 
 &lt;p&gt;As an example, we’ll be examining the Chicago market. As local governments make their data public and more accessible, we can incorporate them into interactive maps that reveal the zoning layout of a city:&lt;/p&gt;
 
@@ -48,7 +61,7 @@
 
 &lt;p&gt;For this analysis we focus upon one particular TOD area within the Chicago market: Logan Square. As a neighborhood that has seen a significant increase in income and education attainment levels over the past decade, it has been a hotbed of development. However, the majority of new developments in the area have occured in other TOD areas within the neihgborhood. Could there still be more buildable square footage around the Logan Square L train station?&lt;/p&gt;
 
-&lt;iframe src=&quot;https://player.vimeo.com/video/224944824&quot; width=&quot;640&quot; height=&quot;360&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;iframe src=&quot;https://player.vimeo.com/video/224944824&quot; width=&quot;100%&quot; height=&quot;520&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 &lt;p&gt;&lt;a href=&quot;https://vimeo.com/224944824&quot;&gt;Logan Square Land Analysis&lt;/a&gt; from &lt;a href=&quot;https://vimeo.com/kiganalytics&quot;&gt;KIG Analytics&lt;/a&gt; on &lt;a href=&quot;https://vimeo.com&quot;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;A 2D and static version of the information above:&lt;/p&gt;
@@ -67,7 +80,7 @@
 
 &lt;p&gt;As well as using a service like OpenStreetMap to display POIs and surrounding restarauants, reatail, grocery, and convenient stores. Our goal would evenutally incorporate this as another seemless layer within a site selection tool.&lt;/p&gt;
 
-&lt;iframe width=&quot;425&quot; height=&quot;350&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; marginheight=&quot;0&quot; marginwidth=&quot;0&quot; src=&quot;https://www.openstreetmap.org/export/embed.html?bbox=-87.71724700927736%2C41.925102965895356%2C-87.69932985305788%2C41.93243842173179&amp;amp;layer=mapnik&quot; style=&quot;border: 1px solid black&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;100%&quot; height=&quot;520&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; marginheight=&quot;0&quot; marginwidth=&quot;0&quot; src=&quot;https://www.openstreetmap.org/export/embed.html?bbox=-87.71724700927736%2C41.925102965895356%2C-87.69932985305788%2C41.93243842173179&amp;amp;layer=mapnik&quot; style=&quot;border: 1px solid black&quot;&gt;&lt;/iframe&gt;
 &lt;p&gt;&lt;br /&gt;&lt;small&gt;&lt;a href=&quot;https://www.openstreetmap.org/#map=17/41.92877/-87.70829&quot;&gt;View Larger Map&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;goal--scaling&quot;&gt;Goal &amp;amp; Scaling&lt;/h3&gt;

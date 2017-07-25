@@ -1,20 +1,20 @@
 # SITE CONFIGURATION
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://example.com" # the base hostname & protocol for your site
+url: "https://kig-analytics.github.io" # the base hostname & protocol for your site
 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
   # Meta
-  title: Home
-  avatar: avatar.png
+  title: KIG | Analytics
+  avatar: KIG_LogoGrey_hires.png
   gravatar: # Email MD5 hash
   description: "A website with blog posts and pages" # used by search engines
 
   # Header and footer text
   header_text: >
-     <h1>Jacob Albers</h1>
+     <h1>KIG | Analytics</h1>
 
-     <p>A selection of my projects, thoughts, and more </p>
+     <p>Data Science and Visualization from a Chicago-based Multifamily Brokerage </p>
 
   header_text_feature_image:
   footer_text: >
@@ -22,16 +22,16 @@ theme_settings:
 
   # Icons
   rss: false
-  email_address: "jacobalbers@uchicago.edu"# Full email address, e.g. "sam@example.com"
+  email_address: "jacob@kigcre.com"# Full email address, e.g. "sam@example.com"
   behance:
   bitbucket:
   dribbble:
   facebook:
   flickr:
-  github: "jalberz"
+  github: "kig-analytics"
   google_plus:
   instagram:
-  linkedin:  "https://www.linkedin.com/in/jlalbers" # Full URL
+  linkedin:  "https://www.linkedin.com/in/k-i-g" # Full URL
   pinterest:
   reddit:
   soundcloud:
@@ -40,10 +40,10 @@ theme_settings:
   tumblr:
   twitter:
   wordpress:
-  youtube:
+  youtube: "https://vimeo.com/kiganalytics"
 
   # Scripts
-  google_analytics: UA-92673872-1 # Tracking ID, e.g. "UA-000000-01"
+  google_analytics: # Tracking ID, e.g. "UA-000000-01"
   disqus_shortname:
   muut_community_name: # From muut.com settings, e.g. "muttcommunityname"
   katex: true # Enable if using math markup

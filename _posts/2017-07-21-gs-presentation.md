@@ -6,11 +6,22 @@ feature-img: "img/chicago.png"
 <!-- <div>
 <img src="img/night.png" class="img-responsive" alt="nightlit southside" width = "1268" height = "327"/>
 </div> -->
-Effective site selection is a critical aspect of any developer's strategy. At KIG, we're in the process of developing a tool using city, county, and transit datasets to make the site selection process more dynamic and efficient. With this tool, a developer can parametrize by zoning, TOD areas, land square footage, and the total buildable square footage on a site.
+
+### Introduction
+
+Effective site selection is a critical aspect of any developer's strategy. At KIG, we're developing a tool using city, county, and transit datasets to make the site selection process both easier and more comprehensive. With this tool in hand, a developer can parametrize by zoning, TOD areas, land square footage, and the total buildable square footage on a site - all without having to leave their desk.
+
+Utilizing the increasing number of datasets available from local governments, 
+
+The overall process that this tool will use can be broken down as follows:
+* Filter a metropoliton area by zoning classes of interest
+* Filter those areas by TOD
+* Determine if current buildings are fully utilizing the FAR of an ar area of interest
+* Verify ownership and current use details
 
 ### The 30,000 Foot View: Filtering Zoning
 
-The first parameter many developers encounter in terms of site selection is zoning. Often, an owner has a specific zoning class or range in mind.
+The first parameter many developers encounter in terms of site selection is zoning. Often, an these has a specific zoning class or classes in mind for their development.
 
 As an example, we'll be examining the Chicago market. As local governments make their data public and more accessible, we can incorporate them into interactive maps that reveal the zoning layout of a city:
 
@@ -40,7 +51,7 @@ Utilizing the FAR (Floor-to-Area Ratio) associated with a particular zoning clas
 
 For this analysis we focus upon one particular TOD area within the Chicago market: Logan Square. As a neighborhood that has seen a significant increase in income and education attainment levels over the past decade, it has been a hotbed of development. However, the majority of new developments in the area have occured in other TOD areas within the neihgborhood. Could there still be more buildable square footage around the Logan Square L train station?
 
-<iframe src="https://player.vimeo.com/video/224944824" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/224944824" width="100%" height="520" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 <p><a href="https://vimeo.com/224944824">Logan Square Land Analysis</a> from <a href="https://vimeo.com/kiganalytics">KIG Analytics</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
 A 2D and static version of the information above:
@@ -59,7 +70,7 @@ For verifying ownership, we can also add an additional layer for parcel mapping,
 
 As well as using a service like OpenStreetMap to display POIs and surrounding restarauants, reatail, grocery, and convenient stores. Our goal would evenutally incorporate this as another seemless layer within a site selection tool.
 
-<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-87.71724700927736%2C41.925102965895356%2C-87.69932985305788%2C41.93243842173179&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=17/41.92877/-87.70829">View Larger Map</a></small>
+<iframe width="100%" height="520" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-87.71724700927736%2C41.925102965895356%2C-87.69932985305788%2C41.93243842173179&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=17/41.92877/-87.70829">View Larger Map</a></small>
 
 ### Goal & Scaling
 
