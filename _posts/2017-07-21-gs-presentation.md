@@ -11,9 +11,7 @@ feature-img: "img/chicago.png"
 
 Effective site selection is a critical aspect of any developer's strategy. At KIG, we're developing a tool using city, county, and transit datasets to make the site selection process both easier and more comprehensive. With this tool in hand, a developer can parametrize by zoning, TOD areas, land square footage, and the total buildable square footage on a site - all without having to leave their desk.
 
-Utilizing the increasing number of datasets available from local governments, 
-
-The overall process that this tool will use can be broken down as follows:
+Utilizing the increasing number of datasets available from local governments, the overall process can be broken down as follows:
 * Filter a metropolitan area by zoning classes of interest
 * Filter those areas by TOD
 * Determine if current buildings are fully utilizing the FAR of an ar area of interest
