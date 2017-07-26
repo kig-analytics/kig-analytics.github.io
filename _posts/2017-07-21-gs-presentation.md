@@ -23,7 +23,7 @@ The first parameter many developers encounter in the site selection process is z
 
 As an example, we'll be examining the Chicago market. As local governments make their data more accessible, we can incorporate them into interactive maps that reveal the zoning layout of a city:
 
-<iframe width="100%" height="520" frameborder="0" src="https://mrutzen1.carto.com/builder/10e23253-de3f-44f5-869c-fee3849a4196/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+<iframe width="100%" height="820" frameborder="0" src="https://mrutzen1.carto.com/builder/10e23253-de3f-44f5-869c-fee3849a4196/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
 
 As one can observe, the data is on such a scale that it would only be helpful to those already with a site in mind. To select a site without prior knowledge, particularly if a developer is less familiar with a given area, We now add further lenses of analysis to pinpoint sites of greatest interest.
 
@@ -41,9 +41,9 @@ At this stage, let us focus upon one particular TOD area within the Chicago mark
 
 Next, we aim to understand the buildings currently located within our areas of interest. Information of interest at this stage includes footprint area, year built, number of floors, and building square footage. All of which are factors that can affect the feasibility of development upon a given site.
 
-<iframe width="100%" height="520" frameborder="0" src="https://mrutzen1.carto.com/builder/2a080009-2d24-4f94-877b-6c2b12cf4e87/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+<iframe width="100%" height="820" frameborder="0" src="https://mrutzen1.carto.com/builder/2a080009-2d24-4f94-877b-6c2b12cf4e87/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
 
-Note: Chicago footprint data does not have accurate building square footage data for all buildings in the city - unknown square footages are replaced with a zero.
+Note: Chicago building data does not have accurate building square footage or year built for all buildings in the city - unknown square footages are replaced with a zero in the above mapping.
 
 ### How High can we Build: Determining Building Potential
 
@@ -52,9 +52,9 @@ Utilizing the FAR (Floor-to-Area Ratio) associated with a particular zoning clas
 <iframe src="https://player.vimeo.com/video/224944824" width="100%" height="520" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 <p><a href="https://vimeo.com/224944824">Logan Square Land Analysis</a> from <a href="https://vimeo.com/kiganalytics">KIG Analytics</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
-A 2D and static version of the information above:
+A 2D and static version of the information above. To account for missing current total building square footage data, we calculated estimates using footprint area and the current number of stories for comparison against the maximum allowable square footage:
 
-<iframe width="100%" height="520" frameborder="0" src="https://mrutzen1.carto.com/builder/fc724878-6527-11e7-bf22-0e8c56e2ffdb/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+<iframe width="100%" height="820" frameborder="0" src="https://mrutzen1.carto.com/builder/fc724878-6527-11e7-bf22-0e8c56e2ffdb/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
 
 In the future, we aim to build in other ordinances and bonuses that city's tend to award for affordable housing, sustainable development, or other practices.
 
@@ -64,7 +64,7 @@ While working with the Chicago datasets, we have found that updates often occur 
 
 For verifying ownership, we can also add an additional layer for parcel mapping, able to reveal associated ownership information from local assessor and recorder offices.
 
-<iframe width="100%" height="520" frameborder="0" src="https://mrutzen1.carto.com/builder/1ebd54f5-8efc-412d-b025-6f670404414a/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+<iframe width="100%" height="820" frameborder="0" src="https://mrutzen1.carto.com/builder/1ebd54f5-8efc-412d-b025-6f670404414a/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
 
 As well as using a service like OpenStreetMap to display POIs and surrounding restaurants, retail, grocery, and convenient stores. Our goal would eventually incorporate this as another seamless layer within a site selection tool.
 

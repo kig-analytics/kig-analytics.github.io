@@ -5,7 +5,7 @@
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description></description>
-    <pubDate>Tue, 25 Jul 2017 17:38:08 -0500</pubDate>
+    <pubDate>Wed, 26 Jul 2017 10:45:09 -0500</pubDate>
     
       <item>
         <title>Site Discovery and Selection for Developers</title>
@@ -19,9 +19,7 @@
 
 &lt;p&gt;Effective site selection is a critical aspect of any developer’s strategy. At KIG, we’re developing a tool using city, county, and transit datasets to make the site selection process both easier and more comprehensive. With this tool in hand, a developer can parametrize by zoning, TOD areas, land square footage, and the total buildable square footage on a site - all without having to leave their desk.&lt;/p&gt;
 
-&lt;p&gt;Utilizing the increasing number of datasets available from local governments,&lt;/p&gt;
-
-&lt;p&gt;The overall process that this tool will use can be broken down as follows:&lt;/p&gt;
+&lt;p&gt;Utilizing the increasing number of datasets available from local governments, the overall process can be broken down as follows:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Filter a metropolitan area by zoning classes of interest&lt;/li&gt;
   &lt;li&gt;Filter those areas by TOD&lt;/li&gt;
@@ -35,7 +33,7 @@
 
 &lt;p&gt;As an example, we’ll be examining the Chicago market. As local governments make their data more accessible, we can incorporate them into interactive maps that reveal the zoning layout of a city:&lt;/p&gt;
 
-&lt;iframe width=&quot;100%&quot; height=&quot;520&quot; frameborder=&quot;0&quot; src=&quot;https://mrutzen1.carto.com/builder/10e23253-de3f-44f5-869c-fee3849a4196/embed&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; oallowfullscreen=&quot;&quot; msallowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;100%&quot; height=&quot;820&quot; frameborder=&quot;0&quot; src=&quot;https://mrutzen1.carto.com/builder/10e23253-de3f-44f5-869c-fee3849a4196/embed&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; oallowfullscreen=&quot;&quot; msallowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;As one can observe, the data is on such a scale that it would only be helpful to those already with a site in mind. To select a site without prior knowledge, particularly if a developer is less familiar with a given area, We now add further lenses of analysis to pinpoint sites of greatest interest.&lt;/p&gt;
 
@@ -53,9 +51,9 @@
 
 &lt;p&gt;Next, we aim to understand the buildings currently located within our areas of interest. Information of interest at this stage includes footprint area, year built, number of floors, and building square footage. All of which are factors that can affect the feasibility of development upon a given site.&lt;/p&gt;
 
-&lt;iframe width=&quot;100%&quot; height=&quot;520&quot; frameborder=&quot;0&quot; src=&quot;https://mrutzen1.carto.com/builder/2a080009-2d24-4f94-877b-6c2b12cf4e87/embed&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; oallowfullscreen=&quot;&quot; msallowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;100%&quot; height=&quot;820&quot; frameborder=&quot;0&quot; src=&quot;https://mrutzen1.carto.com/builder/2a080009-2d24-4f94-877b-6c2b12cf4e87/embed&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; oallowfullscreen=&quot;&quot; msallowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
-&lt;p&gt;Note: Chicago footprint data does not have accurate building square footage data for all buildings in the city - unknown square footages are replaced with a zero.&lt;/p&gt;
+&lt;p&gt;Note: Chicago building data does not have accurate building square footage or year built for all buildings in the city - unknown square footages are replaced with a zero in the above mapping.&lt;/p&gt;
 
 &lt;h3 id=&quot;how-high-can-we-build-determining-building-potential&quot;&gt;How High can we Build: Determining Building Potential&lt;/h3&gt;
 
@@ -64,9 +62,9 @@
 &lt;iframe src=&quot;https://player.vimeo.com/video/224944824&quot; width=&quot;100%&quot; height=&quot;520&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 &lt;p&gt;&lt;a href=&quot;https://vimeo.com/224944824&quot;&gt;Logan Square Land Analysis&lt;/a&gt; from &lt;a href=&quot;https://vimeo.com/kiganalytics&quot;&gt;KIG Analytics&lt;/a&gt; on &lt;a href=&quot;https://vimeo.com&quot;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;A 2D and static version of the information above:&lt;/p&gt;
+&lt;p&gt;A 2D and static version of the information above. To account for missing current total building square footage data, we calculated estimates using footprint area and the current number of stories for comparison against the maximum allowable square footage:&lt;/p&gt;
 
-&lt;iframe width=&quot;100%&quot; height=&quot;520&quot; frameborder=&quot;0&quot; src=&quot;https://mrutzen1.carto.com/builder/fc724878-6527-11e7-bf22-0e8c56e2ffdb/embed&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; oallowfullscreen=&quot;&quot; msallowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;100%&quot; height=&quot;820&quot; frameborder=&quot;0&quot; src=&quot;https://mrutzen1.carto.com/builder/fc724878-6527-11e7-bf22-0e8c56e2ffdb/embed&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; oallowfullscreen=&quot;&quot; msallowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;In the future, we aim to build in other ordinances and bonuses that city’s tend to award for affordable housing, sustainable development, or other practices.&lt;/p&gt;
 
@@ -76,7 +74,7 @@
 
 &lt;p&gt;For verifying ownership, we can also add an additional layer for parcel mapping, able to reveal associated ownership information from local assessor and recorder offices.&lt;/p&gt;
 
-&lt;iframe width=&quot;100%&quot; height=&quot;520&quot; frameborder=&quot;0&quot; src=&quot;https://mrutzen1.carto.com/builder/1ebd54f5-8efc-412d-b025-6f670404414a/embed&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; oallowfullscreen=&quot;&quot; msallowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;100%&quot; height=&quot;820&quot; frameborder=&quot;0&quot; src=&quot;https://mrutzen1.carto.com/builder/1ebd54f5-8efc-412d-b025-6f670404414a/embed&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; oallowfullscreen=&quot;&quot; msallowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;As well as using a service like OpenStreetMap to display POIs and surrounding restaurants, retail, grocery, and convenient stores. Our goal would eventually incorporate this as another seamless layer within a site selection tool.&lt;/p&gt;
 
