@@ -5,7 +5,216 @@
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description></description>
-    <pubDate>Wed, 26 Jul 2017 10:45:09 -0500</pubDate>
+    <pubDate>Thu, 05 Oct 2017 15:43:57 -0500</pubDate>
+    
+      <item>
+        <title>Institutional Investment Across Chicago</title>
+        <link>http://localhost:4000/2017/10/02/institutional-investment.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/10/02/institutional-investment.html</guid>
+        <description>&lt;style&gt;
+
+&amp; p.subheading {
+        font-size: 1.75rem;
+        color: #525252;
+        font-style:italic;
+    }
+    &amp; .row.mt-0{
+        margin-left:0;
+        margin-right:0;
+    }
+    #axis-label{
+        margin-right: 30px;
+        &amp; .col-md-6{
+            padding:3px;
+            &amp; h6{
+                margin-bottom: 0px;
+                margin-top:0px;
+                padding-right: 10px;
+                padding-left: 10px;
+            }
+        }
+    }
+    #viz_container{
+        overflow: visible;
+        position: relative;
+        height: inherit;
+        margin-top:20px;
+    }
+    .node rect {
+        cursor: move;
+        fill-opacity: .9;
+        shape-rendering: crispEdges;
+    }
+    .node text {
+        pointer-events: none;
+        text-shadow: 0 1px 0 #fff;
+    }
+    .link {
+        fill: none;
+        stroke: #000;
+        stroke-opacity: .1;
+    }
+    #sankey-panel {
+        overflow: visible;
+        position: relative;
+        float: right;
+        text-align:left;
+        /*left:730px;
+        padding-right:20px;
+        padding-left:40px;*/
+        height: inherit;
+        margin-top: 0px;
+        margin-left:0px;
+        background-color: inherit;
+    }
+    .panel_desc{
+        margin-top: 10px;
+    }
+    #tab{
+        margin-top: -20px;
+        margin-bottom: 25px;
+    }
+
+    #tab_2 &gt; table.icon{
+        margin-bottom: 3.5px;
+    }
+    #tab_2 &gt; table &gt; tbody &gt; tr &gt; td.val{
+        width: 216px;
+        height:15px;
+        overflow:invisible;
+    }
+    #tab_2 &gt; table &gt; tbody &gt; tr &gt; td.name{
+        width: 270px;
+        height:15px;
+        overflow:visible;
+    }
+    #tab_2 {
+        /*height:40px;*/
+        width:385px;
+        margin-top:2px;
+        margin-bottom:-15px;
+    }
+    #sankey-panel h1 {
+        font-size: 2em;
+        font-style: inherit;
+        font-weight: lighter;
+        margin-top: 0;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 10px;
+        padding: 0;
+        color: #0071BC;
+        line-height:110%;
+        }
+    #sankey-panel h2 {
+        font-size: 2.1em;
+        font-style: inherit;
+        font-weight: ultra-light;
+        margin: 0;
+        padding: 0;
+        color: #666666;
+    }
+    #sankey-panel h3 {
+        font-size: 1.4em;
+        margin: 0;
+        padding: 0;
+        text-transform: capitalize;
+        /*font-variant:small-caps;*/
+        color: #555555;
+    }
+    #sankey-panel h4 {
+        font-size: 1.5em;
+        text-transform: capitalize;
+        /*font-variant:small-caps;*/
+        font-style: inherit;
+        color: #555555;
+    }
+    #sankey-panel p {
+        font-style: inherit;
+        font-size: .8em;
+        line-height: 110%;
+        /*margin-top: -3px;
+        text-transform: capitalize;
+        font-variant:small-caps;*/
+        color: #555555;
+    }
+    #tite_text {
+        margin-top: 10px;
+        width: 800px;
+    }
+    #tite_text &gt; p.headline {
+        position: relative;
+        font-size: 2em;
+    }
+    #tite_text &gt; p.body_text {
+        position: relative;
+        font-size: 1.1em;
+        margin-top: -15px;
+    }
+    #description &gt; p.body_text {
+        position: relative;
+        font-size: 1.1em;
+        margin-top: -15px;
+    }
+    #references{
+        .p {
+                margin-bottom: 1.5rem;
+        }
+    }
+
+&lt;/style&gt;
+
+&lt;h2 style=&quot;margin-top:0; margin-bottom:10px&quot;&gt;Institutional Investment Across Chicago Neighborhoods &lt;/h2&gt;
+&lt;p class=&quot;subheading&quot;&gt;Connecting Neighborhoods to Institutions 2010 - 2017&lt;/p&gt;
+&lt;div class=&quot;row mt-0&quot;&gt;
+    &lt;div class=&quot;col-md-8&quot; style=&quot;margin-left:0; padding-left:0; padding-right:30px&quot;&gt;
+        &lt;p&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col-md-4&quot; style=&quot;padding-left:0&quot;&gt;
+        &lt;div style=&quot;border-color:#d6d7d9; border-width: 1px; border-style: solid; padding:10px; margin-bottom:40px&quot;&gt;
+            &lt;h6 style=&quot;margin-top:0; margin-bottom:5px&quot;&gt;How to use this tool:&lt;/h6&gt;
+            &lt;p style=&quot;margin-bottom:0&quot;&gt;Hover over each color bar to highlight how each neighborhood relates to investment institutions, and vice versa.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;iframe width=&quot;998&quot; height=&quot;1240&quot; frameborder=&quot;0&quot; src=&quot;https://kiganalytics.carto.com/builder/cd18ad66-807d-4482-9a05-54cdde4f9f1c/embed&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; oallowfullscreen=&quot;&quot; msallowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;div class=&quot;row mt-0&quot;&gt;
+    &lt;div class=&quot;col-md-7&quot; style=&quot;padding:10px&quot;&gt;
+        &lt;div class=&quot;row mt-0&quot;&gt;
+            &lt;div id=&quot;axis-label&quot;&gt;
+                &lt;div class=&quot;col-md-6&quot;&gt;
+                    &lt;h6&gt;Neighborhood:&lt;/h6&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;col-md-6&quot;&gt;
+                    &lt;h6 style=&quot;text-align:right&quot;&gt;Institution:&lt;/h6&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;row mt-0&quot;&gt;
+            &lt;div id=&quot;viz_container&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;col-md-5&quot; style=&quot;padding:10px&quot;&gt;
+        &lt;div id=&quot;sankey-panel&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- &lt;div class=&quot;row mt-0&quot;&gt;
+    &lt;div id=&quot;references&quot;&gt;
+        &lt;h5&gt; How this analysis was conducted&lt;/h5&gt;
+        &lt;p&gt;This analysis was conducted using agency account obligation data reported to USAspending.gov, which is available to the public. Each reported account is aligned to a single Budget Function and is further broken out by the dollars obligated under each Object Class (data can be found via the TAS/categories endpoint within the DATA Act API). Summarizing across all agency accounts can provide the total dollars obligated under each unique combination of Budget Function and Object Class which populates the visualization above.The data used in this tool was pulled as of September 22, 2017.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt; --&gt;
+&lt;!-- d3 --&gt;
+&lt;script src=&quot;d3.v3.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;investment-sankey.js&quot;&gt;&lt;/script&gt;
+
+</description>
+        <pubDate>Mon, 02 Oct 2017 00:00:00 -0500</pubDate>
+      </item>
     
       <item>
         <title>Site Discovery and Selection for Developers</title>
