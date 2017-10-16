@@ -203,3 +203,6 @@ page: investment-sankey
 <!-- d3 -->
 <script src="d3.v3.min.js"></script>
 <script src="investment-sankey.js"></script>
+
+**Disclaimer**
+©  and database right KIG Analytics LLC 2017. All rights reserved. THIS MATERIAL IS SUPPLIED BY KIG ANALYTICS LLC “AS IS”. ALL WARRANTIES OF ANY KIND WHATSOEVER, EXPRESSED, IMPLIED AND STATUTORY, ARE HEREBY DISCLAIMED. ALL IMPLIED WARRANTIES FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT ARE HEREBY DISCLAIMED. KIG has no liability to any person for any losses, damages, costs or expenses as a result of any reliance on this presentation or any of the information contained within. For additional terms and conditions visit kigcre.com.
