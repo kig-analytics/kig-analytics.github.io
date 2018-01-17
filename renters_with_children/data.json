@@ -1,0 +1,272 @@
+{
+  "2011": [{
+    "name": "Total Homeowners",
+    "values": {
+      "Suburban Cook": 672530,
+      "DuPage": 254592,
+      "Kane": 129816,
+      "Kendall": 31770,
+      "Lake": 186237,
+      "McHenry": 90852,
+      "Will": 187321
+    }
+  }, {
+    "name": "Homeowners with Children",
+    "values": {
+      "Suburban Cook": 231434,
+      "DuPage": 95299,
+      "Kane": 54078,
+      "Kendall": 15043,
+      "Lake": 77379,
+      "McHenry": 36536,
+      "Will": 83036
+    }
+  }, {
+    "name": "Total Renters",
+    "values": {
+      "Suburban Cook": 231495,
+      "DuPage": 81059,
+      "Kane": 39712,
+      "Kendall": 5086,
+      "Lake": 53710,
+      "McHenry": 17509,
+      "Will": 34401
+    }
+  }, {
+    "name": "Renters with Children",
+    "values": {
+      "Suburban Cook": 81723,
+      "DuPage": 25861,
+      "Kane": 17238,
+      "Kendall": 2226,
+      "Lake": 21730,
+      "McHenry": 7022,
+      "Will": 14484
+    }
+  }],
+  "2012":  [{
+    "name": "Total Homeowners",
+    "values": {
+      "Suburban Cook": 665533,
+      "DuPage": 251585,
+      "Kane": 129009,
+      "Kendall": 32214,
+      "Lake": 184999,
+      "McHenry": 90267,
+      "Will": 185671
+    }
+  }, {
+    "name": "Homeowners with Children",
+    "values": {
+      "Suburban Cook": 225304,
+      "DuPage": 92016,
+      "Kane": 51814,
+      "Kendall": 15353,
+      "Lake": 75298,
+      "McHenry": 35529,
+      "Will": 81057
+    }
+  }, {
+    "name": "Total Renters",
+    "values": {
+      "Suburban Cook": 238061,
+      "DuPage": 83947,
+      "Kane": 41060,
+      "Kendall": 5603,
+      "Lake": 55745,
+      "McHenry": 18683,
+      "Will": 36421
+    }
+  }, {
+    "name": "Renters with Children",
+    "values": {
+      "Suburban Cook": 85500,
+      "DuPage": 27212,
+      "Kane": 18579,
+      "Kendall": 2561,
+      "Lake": 22821,
+      "McHenry": 7384,
+      "Will": 15493
+    }
+  }],
+  "2013":  [{
+    "name": "Total Homeowners",
+    "values": {
+      "Suburban Cook": 661848,
+      "DuPage": 250115,
+      "Kane": 128377,
+      "Kendall": 31847,
+      "Lake": 183009,
+      "McHenry": 89602,
+      "Will": 184498
+    }
+  }, {
+    "name": "Homeowners with Children",
+    "values": {
+      "Suburban Cook": 218276,
+      "DuPage": 89323,
+      "Kane": 50453,
+      "Kendall": 15082,
+      "Lake": 73116,
+      "McHenry": 34309,
+      "Will": 78067
+    }
+  }, {
+    "name": "Total Renters",
+    "values": {
+      "Suburban Cook": 242741,
+      "DuPage": 85913,
+      "Kane": 41981,
+      "Kendall": 6228,
+      "Lake": 58063,
+      "McHenry": 19250,
+      "Will": 38154
+    }
+  }, {
+    "name": "Renters with Children",
+    "values": {
+      "Suburban Cook": 88144,
+      "DuPage": 27744,
+      "Kane": 18671,
+      "Kendall": 2861,
+      "Lake": 23709,
+      "McHenry": 7904,
+      "Will": 16596
+    }
+  }],
+  "2014": [{
+    "name": "Total Homeowners",
+    "values": {
+      "Suburban Cook": 656005,
+      "DuPage": 248836,
+      "Kane": 127614,
+      "Kendall": 31961,
+      "Lake": 181664,
+      "McHenry": 89100,
+      "Will": 182913
+    }
+  }, {
+    "name": "Homeowners with Children",
+    "values": {
+      "Suburban Cook": 212637,
+      "DuPage": 87181,
+      "Kane": 48911,
+      "Kendall": 14680,
+      "Lake": 71222,
+      "McHenry": 34338,
+      "Will": 76450
+    }
+  }, {
+    "name": "Total Renters",
+    "values": {
+      "Suburban Cook": 252226,
+      "DuPage": 88167,
+      "Kane": 43702,
+      "Kendall": 6492,
+      "Lake": 60182,
+      "McHenry": 20121,
+      "Will": 40466
+    }
+  }, {
+    "name": "Renters with Children",
+    "values": {
+      "Suburban Cook": 91088,
+      "DuPage": 28707,
+      "Kane": 20051,
+      "Kendall": 2963,
+      "Lake": 25246,
+      "McHenry": 8160,
+      "Will": 17789
+    }
+  }],
+  "2015": [{
+    "name": "Total Homeowners",
+    "values": {
+      "Suburban Cook": 648892,
+      "DuPage": 248508,
+      "Kane": 126903,
+      "Kendall": 31778,
+      "Lake": 179785,
+      "McHenry": 88257,
+      "Will": 182276
+    }
+  }, {
+    "name": "Homeowners with Children",
+    "values": {
+      "Suburban Cook": 206540,
+      "DuPage": 85456,
+      "Kane": 48222,
+      "Kendall": 14376,
+      "Lake": 68555,
+      "McHenry": 32847,
+      "Will": 74523
+    }
+  }, {
+    "name": "Total Renters",
+    "values": {
+      "Suburban Cook": 258631,
+      "DuPage": 89575,
+      "Kane": 45576,
+      "Kendall": 6738,
+      "Lake": 62641,
+      "McHenry": 21234,
+      "Will": 41364
+    }
+  }, {
+    "name": "Renters with Children",
+    "values": {
+      "Suburban Cook": 93777,
+      "DuPage": 29262,
+      "Kane": 21327,
+      "Kendall": 3319,
+      "Lake": 26330,
+      "McHenry": 8203,
+      "Will": 17756
+    }
+  }],
+  "2016": [{
+    "name": "Total Homeowners",
+    "values": {
+      "Suburban Cook": 645279,
+      "DuPage": 247155,
+      "Kane": 127075,
+      "Kendall": 32152,
+      "Lake": 178807,
+      "McHenry": 86922,
+      "Will": 182341
+    }
+  }, {
+    "name": "Homeowners with Children",
+    "values": {
+      "Suburban Cook": 201618,
+      "DuPage": 84046,
+      "Kane": 48061,
+      "Kendall": 14758,
+      "Lake": 66742,
+      "McHenry": 31326,
+      "Will": 73447
+    }
+  }, {
+    "name": "Total Renters",
+    "values": {
+      "Suburban Cook": 263748,
+      "DuPage": 91832,
+      "Kane": 46643,
+      "Kendall": 7123,
+      "Lake": 64469,
+      "McHenry": 23187,
+      "Will": 42618
+    }
+  }, {
+    "name": "Renters with Children",
+    "values": {
+      "Suburban Cook": 95257,
+      "DuPage": 29420,
+      "Kane": 21057,
+      "Kendall": 3632,
+      "Lake": 26751,
+      "McHenry": 8875,
+      "Will": 17823
+    }
+  }]
+}
