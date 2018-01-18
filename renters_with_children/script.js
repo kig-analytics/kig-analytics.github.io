@@ -91,7 +91,7 @@ function createChart (svg, data) {
       .keys(valueKeys)
 
   // updates both the year + the chart type (group or stacked)
-  function updateChart (data, chartType='stack') {
+  function updateChart (data, chartType='group') {
 
     // ========================================================
     //  show grouped view
@@ -101,7 +101,8 @@ function createChart (svg, data) {
 
       //find max value of a section
       const maxValue = d3.max(data.map((d) => Object.values(d.values)).reduce((a, b) => a.concat(b), []))
-      y.domain([0, maxValue]).nice()
+      const minValue = d3.min(data.map((d) => Object.values(d.values)).reduce((a, b) => a.concat(b), []))
+      y.domain([minValue, maxValue]).nice()
 
       yAxis.transition()
       .call(d3.axisLeft(y))
@@ -138,7 +139,6 @@ function createChart (svg, data) {
       .attr('x', function (d) { return x1(d.key) })
       .attr('y', d => y(d.value))
       .attr('height', d => height - y(d.value))
-
     }
 
     // ========================================================
@@ -154,7 +154,14 @@ function createChart (svg, data) {
       })
     )
 
-      y.domain([0, maxValue]).nice()
+      const minValue = d3.min(
+        data.map((d) => Object.values(d.values))
+      .map((valueArray)=>{
+        return valueArray.reduce((a,b)=> a+ b)
+      })
+    )
+
+      y.domain([minValue, maxValue]).nice()
 
       yAxis.transition()
       .call(d3.axisLeft(y))
@@ -214,7 +221,7 @@ function createChart (svg, data) {
   }
 }
 
-d3.json('./data.json', function(error, data){
+d3.json('./data2.json', function(error, data){
 
   //start with the first year selected
   const chart = createChart(document.querySelector('svg'), data)
@@ -246,7 +253,7 @@ d3.json('./data.json', function(error, data){
   })
 
   const fieldset2 = d3.select('.controls').append('fieldset')
-  const types =  ['stack', 'group']
+  const types =  ['group', 'stack']
   fieldset2.append('legend').text('Graph Layout')
 
   types.forEach((graphType, index)=>{
