@@ -137,8 +137,8 @@ function createChart (svg, data) {
       .transition()
       .attr('width', x1.bandwidth())
       .attr('x', function (d) { return x1(d.key) })
-      .attr('y', d => y(d.value))
-      .attr('height', d => height - y(d.value))
+      .attr('y', d => y(Math.max(0,d.value))) // y(d.value)
+      .attr('height', d => Math.abs(y(d.value) - y(0))) //height - y(d.value)
     }
 
     // ========================================================
