@@ -207,9 +207,9 @@ function createChart (svg, data) {
       .transition()
       .delay((d,i)=> i * 50)
       .attr('width', x0.bandwidth())
-      .attr("y", function(d) {return y(d[1]) })
+      .attr("y", function(d) {return y(Math.max(0,d[1])) })
       .attr("x", 0)
-      .attr("height", function(d) { return y(d[0]) - y(d[1]) })
+      .attr("height", function(d) { return Math.abs(y(d[0]) - y(d[1])) })
 
     }
 
