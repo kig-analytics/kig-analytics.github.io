@@ -2,7 +2,8 @@
 
 function createChart (svg, data) {
 
-  const colors = ['#98abc5', '#8a89a6', '#7b6888', '#6b486b', '#a05d56', '#d0743c', '#ff8c00']
+  const colors = ['#EFB605', '#EB8612', '#DD0030', '#80348F', '#3365AA', '#07A071', '#7EB852'] 
+  //["#EFB605","#EB8612","#DD0030","#B3005A","#80348F","#3365AA","#07A071","#7EB852"]
 
   svg = d3.select(svg)
   const margin = {top: 20, right: 20, bottom: 30, left: 60}
