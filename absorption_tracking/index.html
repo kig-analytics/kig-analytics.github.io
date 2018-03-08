@@ -27,6 +27,22 @@ form {
     top: 10px;
 }
 
+    .toolTip {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        position: absolute;
+        display: none;
+        width: auto;
+        height: auto;
+        background: none repeat scroll 0 0 white;
+        border: 0 none;
+        box-shadow: -3px 3px 15px #888888;
+        color: black;
+        font: 12px sans-serif;
+        padding: 5px;
+        text-align: center;
+    }
+
+
 </style>
 <body>
     <div class="controls"></div>
@@ -48,6 +64,8 @@ var n = 7, // number of layers
 
 var formatPercent = d3.format(".0%");
 var formatNumber = d3.format("");
+
+var div = d3.select("body").append("div").attr("class", "toolTip");
 
 // transpose data
 // data = data[0].map(function(col, i) { 
@@ -117,17 +135,17 @@ d3.csv("absorption_tracking.csv", function(d, i, columns) {
         .tickPadding(6);
 
 
-    //PROBLEM AREA -> Not returning numbers
     var layer = svg.selectAll(".layer")
         .data(layers)
       .enter().append("g")
         .attr("class", "layer")
-        .attr("id", function(d) { console.log(d.key); return d.key; })
+        .attr("id", function(d) { return d.key; })
         .style("fill", function(d, i) { return color(i); });
 
     var rect = layer.selectAll("rect")
         .data(function(d) { return d; })
       .enter().append("rect")
+        .attr("id", function(d) {console.log(this.parentNode.id); return this.parentNode.id; })
         .attr("x", function(d) {0; })
         .attr("y", function(d) { height; })
         .attr("width", x.bandwidth())
@@ -138,6 +156,20 @@ d3.csv("absorption_tracking.csv", function(d, i, columns) {
         .attr("x", function(d) { return x(d.data.Date); })
         .attr("y", function(d) { return y(d[1]); })
         .attr("height", function(d) { return y(d[0]) - y(d[1]); });
+
+    rect.on("mousemove", function(d){
+                console.log(this);
+                d3.select(this).attr("opacity", 0.5);
+                div.style("left", d3.event.pageX+10+"px");
+                div.style("top", d3.event.pageY-25+"px");
+                div.style("display", "inline-block");
+                div.html(this.id +"<br>"+(d[1] - d[0])+" units");
+            });
+
+    rect.on("mouseout", function(d){
+                d3.select(this).attr("opacity", 1.0);
+                div.style("display", "none");
+            });
 
     svg.append("g")
         .attr("class", "x axis")
