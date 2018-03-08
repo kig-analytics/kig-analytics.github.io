@@ -28,11 +28,16 @@ form {
 }
 
 </style>
-<form>
-    <label><input type="radio" name="mode" value="percent"> Percent</label>
-<!--     <label><input type="radio" name="mode" value="grouped"> Grouped</label> -->
-    <label><input type="radio" name="mode" value="stacked" checked> Stacked</label>
-</form>
+<body>
+    <div class="controls"></div>
+
+    <h1></h1>
+
+    <form>
+<!--         <label><input type="radio" name="mode" value="percent"> Percent</label>
+        <label><input type="radio" name="mode" value="grouped"> Grouped</label>
+        <label><input type="radio" name="mode" value="stacked" checked> Stacked</label> -->
+    </form>
 <script src="//d3js.org/d3.v4.min.js"></script>
 <script>
 
@@ -67,8 +72,11 @@ var y = d3.scaleLinear()
     .rangeRound([height, 0]);
 
 var color = d3.scaleOrdinal()
-    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+    .range(['#07A071', '#77cbff', '#3365AA', '#80348F', '#DD0030', '#EB8612', '#EFB605']); 
 
+//.range(['#EFB605' West Loop, '#EB8612' River North, '#DD0030' Loop, '#80348F' Streeterville, '#3365AA' Near North, '#77cbff' Gold Coast, '#07A071' SOuth Loop]);
+//['#EFB605', '#EB8612', '#DD0030', '#80348F', '#3365AA', '#77cbff', '#07A071']
+//['#07A071', '#77cbff', '#3365AA', '#80348F', '#DD0030', '#EB8612, '#EFB605']
 var svg = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -228,6 +236,60 @@ d3.csv("absorption_tracking.csv", function(d, i, columns) {
             .call(yAxis)
 
     }
+
+    const fieldset2 = d3.select('.controls').append('fieldset')
+    const types =  ['stacked', 'percent']
+    fieldset2.append('legend').text('Graph Layout')
+
+    types.forEach((graphType, index)=>{
+        const label = fieldset2.append('label')
+        label.append('input')
+        .attr('type', 'radio')
+        .attr('name', 'graphType')
+        .attr('value', graphType)
+        .attr('checked', function(){
+          if (index === 0) return true
+          return null
+        })
+        .on('click', ()=>{
+            this.value = graphType
+          change()
+        })
+
+        label.append('span')
+        .text(graphType)
+
+    })
+
+  var legend = d3.select('.controls').append('svg')
+  .attr('width', width)
+  .attr('height', height*0.35)
+  .attr('padding', 15)
+  .attr('y', 15)
+  .attr('font-size', 10)
+
+
+  legend.append('text')
+  .text('Chicago Core Submarket')
+  .style('font-weight', 'bold')
+
+  var legendEnter = legend
+    .selectAll('g')
+    .data(data.columns.slice(1))
+    .enter().append('g')
+      .attr('transform', function (d, i) { return 'translate(0,' + i * 20 + ')' })
+
+  legendEnter.append('rect')
+      .attr('x', 19)
+      .attr('width', 19)
+      .attr('height', 19)
+      .attr('fill', color)
+
+  legendEnter.append('text')
+      .attr('x', 43)
+      .attr('y', 9.5)
+      .attr('dy', '0.32em')
+      .text(d => d)
 })
 
 
@@ -314,3 +376,5 @@ d3.csv("absorption_tracking.csv", function(d, i, columns) {
 // })
 
 </script>
+</body>
+</html>
