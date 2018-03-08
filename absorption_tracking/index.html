@@ -145,7 +145,7 @@ d3.csv("absorption_tracking.csv", function(d, i, columns) {
     var rect = layer.selectAll("rect")
         .data(function(d) { return d; })
       .enter().append("rect")
-        .attr("id", function(d) {console.log(this.parentNode.id); return this.parentNode.id; })
+        .attr("id", function(d) { return this.parentNode.id; })
         .attr("x", function(d) {0; })
         .attr("y", function(d) { height; })
         .attr("width", x.bandwidth())
@@ -158,7 +158,6 @@ d3.csv("absorption_tracking.csv", function(d, i, columns) {
         .attr("height", function(d) { return y(d[0]) - y(d[1]); });
 
     rect.on("mousemove", function(d){
-                console.log(this);
                 d3.select(this).attr("opacity", 0.5);
                 div.style("left", d3.event.pageX+10+"px");
                 div.style("top", d3.event.pageY-25+"px");
